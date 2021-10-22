@@ -1,0 +1,5 @@
+package WeatherInfoEvent
+
+class LoginAttemptEvent {
+
+}
