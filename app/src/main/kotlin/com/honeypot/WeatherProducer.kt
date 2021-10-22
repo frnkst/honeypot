@@ -22,7 +22,7 @@ class WeatherProducer {
 
     fun sendMessage(topic: String, message: String): ListenableFuture<SendResult<String, String>> {
         //logger.info(java.lang.String.format("#### -> Producing message -> %s", message))
-        return kafkaTemplate.send(topic, "hey")
+        return kafkaTemplate.send(topic, message)
     }
 
     // fake event

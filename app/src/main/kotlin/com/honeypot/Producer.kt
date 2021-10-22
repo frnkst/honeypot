@@ -19,9 +19,8 @@ class Producer {
     @Autowired
     private lateinit var kafkaTemplate: KafkaTemplate<String, String>
 
-    fun sendMessage() {
-        val message = "test"
-        val future: ListenableFuture<SendResult<String, String>> = kafkaTemplate.send(topicName, "hey")
+    fun sendMessage(message: String) {
+        val future: ListenableFuture<SendResult<String, String>> = kafkaTemplate.send(topicName, message)
 
         future.addCallback(object : ListenableFutureCallback<SendResult<String, String>> {
             override fun onSuccess(@Nullable result: SendResult<String, String>?) {
