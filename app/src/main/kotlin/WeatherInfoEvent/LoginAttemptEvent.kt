@@ -1,5 +1,0 @@
-package WeatherInfoEvent
-
-class LoginAttemptEvent {
-
-}
