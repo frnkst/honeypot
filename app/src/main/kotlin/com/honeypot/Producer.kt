@@ -1,5 +1,6 @@
 package com.honeypot
 
+
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.kafka.support.SendResult
@@ -7,6 +8,7 @@ import org.springframework.lang.Nullable
 import org.springframework.stereotype.Component
 import org.springframework.util.concurrent.ListenableFuture
 import org.springframework.util.concurrent.ListenableFutureCallback
+import java.util.*
 
 private const val topicName = "frank"
 
@@ -19,7 +21,7 @@ class Producer {
 
     fun sendMessage() {
         val message = "test"
-        val future: ListenableFuture<SendResult<String, String>> = kafkaTemplate.send(topicName, message)
+        val future: ListenableFuture<SendResult<String, String>> = kafkaTemplate.send(topicName, "hey")
 
         future.addCallback(object : ListenableFutureCallback<SendResult<String, String>> {
             override fun onSuccess(@Nullable result: SendResult<String, String>?) {

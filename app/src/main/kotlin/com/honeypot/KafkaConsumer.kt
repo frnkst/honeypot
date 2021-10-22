@@ -3,7 +3,7 @@ package com.honeypot
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Component
 
-
+/*
 @Component
 class Consumer {
     @KafkaListener(topics = ["frank"], groupId = "123")
@@ -11,4 +11,4 @@ class Consumer {
         println("Received Message in group foo: $message")
     }
 }
-
+*/
