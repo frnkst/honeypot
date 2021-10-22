@@ -1,14 +1,14 @@
 package com.honeypot
 
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class MyService {
+class MyService(producer: Producer) {
 
-
-    constructor(producer: Producer) {
+    init {
         println("here")
+        Thread.sleep(15000)
+        println("now sending the message")
         producer.sendMessage()
     }
 }
