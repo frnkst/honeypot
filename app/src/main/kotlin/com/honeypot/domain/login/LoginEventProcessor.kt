@@ -1,14 +1,16 @@
 package com.honeypot.domain.login
 
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Service
 
 
 @Service
-class WeatherInfoEventProcessor {
-    //private val logger: Logger = LoggerFactory.getLogger(javaClass)
-    private var listener: WeatherInfoEventListener? = null
-    fun register(listener: WeatherInfoEventListener) {
+class LoginEventProcessor {
+    private val logger: Logger = LoggerFactory.getLogger(javaClass)
+    private var listener: LoginEventListener? = null
+    fun register(listener: LoginEventListener) {
         this.listener = listener
     }
 
@@ -22,8 +24,7 @@ class WeatherInfoEventProcessor {
 
     @KafkaListener(topics = ["frank"], groupId = "123")
     fun consume(message: String) {
-        //logger.info(String.format("#### -> Consumed message -> %s", message))
-        println("yeeey got one")
+        logger.info(String.format("#### -> Consumed message -> %s", message))
         onEvent(message)
     }
 }

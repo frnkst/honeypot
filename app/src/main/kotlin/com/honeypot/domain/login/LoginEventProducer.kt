@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 import kotlin.random.Random
 
 @Component
-class ExampleEventProducer {
+class LoginEventProducer {
 
     @Autowired
     private lateinit var producer: Producer

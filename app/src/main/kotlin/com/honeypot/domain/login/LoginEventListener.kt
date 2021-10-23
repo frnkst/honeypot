@@ -1,6 +1,6 @@
 package com.honeypot.domain.login
 
-interface WeatherInfoEventListener {
+interface LoginEventListener {
         fun onData(event: String)
         fun processComplete()
     }
