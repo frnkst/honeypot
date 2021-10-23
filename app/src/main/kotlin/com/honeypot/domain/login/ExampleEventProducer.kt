@@ -1,4 +1,4 @@
-package com.honeypot.example
+package com.honeypot.domain.login
 
 import com.honeypot.kafka.Producer
 import org.springframework.beans.factory.annotation.Autowired

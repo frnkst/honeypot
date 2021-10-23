@@ -1,4 +1,4 @@
-package com.honeypot
+package com.honeypot.domain.login
 
 interface WeatherInfoEventListener {
         fun onData(event: String)
