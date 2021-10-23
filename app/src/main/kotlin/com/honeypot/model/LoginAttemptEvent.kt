@@ -1,4 +1,4 @@
-package com.honeypot
+package com.honeypot.model
 
 import java.util.*
 

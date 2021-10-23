@@ -1,4 +1,4 @@
-package com.honeypot
+package com.honeypot.kafka
 
 
 import org.springframework.beans.factory.annotation.Autowired
@@ -8,7 +8,6 @@ import org.springframework.lang.Nullable
 import org.springframework.stereotype.Component
 import org.springframework.util.concurrent.ListenableFuture
 import org.springframework.util.concurrent.ListenableFutureCallback
-import java.util.*
 
 private const val topicName = "frank"
 

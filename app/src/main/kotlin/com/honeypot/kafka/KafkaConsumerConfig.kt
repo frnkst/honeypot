@@ -1,4 +1,4 @@
-package com.honeypot
+package com.honeypot.kafka
 
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.common.serialization.StringDeserializer

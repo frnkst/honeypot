@@ -9,6 +9,7 @@ import org.springframework.kafka.core.KafkaAdmin
 
 @Configuration
 class KafkaTopicConfig {
+    /*
         @Value(value = "\${kafka.bootstrapAddress}")
         private val bootstrapAddress: String? = null
         @Bean
@@ -22,4 +23,6 @@ class KafkaTopicConfig {
         fun topic1(): NewTopic {
             return NewTopic("baeldung", 1, 1.toShort())
         }
+
+     */
 }

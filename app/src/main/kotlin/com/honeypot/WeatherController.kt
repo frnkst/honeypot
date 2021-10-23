@@ -1,7 +1,5 @@
 package com.honeypot
 
-import com.honeypot.LoginAttemptEvent
-import com.honeypot.WeatherInfoEventListener
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
@@ -22,14 +20,14 @@ class WeatherController {
 
     private fun createBridge(): Flux<String> {
         return Flux.create { sink: FluxSink<String> ->  // (2)
-            processor?.register(object: WeatherInfoEventListener {
+            processor.register(object: WeatherInfoEventListener {
                 override fun processComplete() {
                     sink.complete()
                 }
 
-                override fun onData(data: String) {
+                override fun onData(event: String) {
                     println("frank on data")
-                    sink.next(data)
+                    sink.next(event)
                 }
             })
         }
