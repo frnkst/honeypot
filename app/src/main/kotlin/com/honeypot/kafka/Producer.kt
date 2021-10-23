@@ -1,6 +1,8 @@
 package com.honeypot.kafka
 
 
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.kafka.support.SendResult
@@ -15,21 +17,22 @@ private const val topicName = "frank"
 @Component
 class Producer {
 
+    private val logger: Logger = LoggerFactory.getLogger(javaClass)
+
     @Autowired
     private lateinit var kafkaTemplate: KafkaTemplate<String, String>
 
     fun sendMessage(message: String) {
-        val future: ListenableFuture<SendResult<String, String>> = kafkaTemplate.send(topicName, message)
+        val future: ListenableFuture<SendResult<String, String>> =
+            kafkaTemplate.send(topicName, message)
 
         future.addCallback(object : ListenableFutureCallback<SendResult<String, String>> {
             override fun onSuccess(@Nullable result: SendResult<String, String>?) {
-                println("Sent message=[" + message +
-                        "] with offset=[" + result!!.recordMetadata.offset() + "]")
+                logger.info(String.format("#### -> Sent message=[${message}] with offset=[${result!!.recordMetadata.offset()}]"))
             }
 
             override fun onFailure(ex: Throwable) {
-                println("Unable to send message=["
-                        + message + "] due to : " + ex.message)
+                logger.error(String.format("#### -> Unable to send message=[${message}] due to : ${ex.message}"))
             }
         })
     }

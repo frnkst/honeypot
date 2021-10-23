@@ -14,8 +14,7 @@ class LoginEventController {
     private val bridge: Flux<String>
 
     @get:GetMapping(value = ["/events/login"], produces = ["text/event-stream;charset=UTF-8"])
-    val weatherInfo: Flux<String>
-        get() = bridge
+    val loginEvent: Flux<String> get() = bridge
 
     private fun createBridge(): Flux<String> {
         return Flux.create { sink: FluxSink<String> ->
