@@ -22,7 +22,7 @@ class LoginEventProcessor {
         listener?.processComplete()
     }
 
-    @KafkaListener(topics = ["frank"], groupId = "123")
+    @KafkaListener(topics = ["login"], groupId = "1")
     fun consume(message: String) {
         logger.info(String.format("#### -> Consumed message -> %s", message))
         onEvent(message)
