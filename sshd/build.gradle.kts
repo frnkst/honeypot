@@ -20,6 +20,8 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.9.6")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.6")
     implementation("org.apache.kafka:kafka-clients:2.0.0")
+    implementation("ch.qos.logback:logback-classic:1.1.3")
+    implementation("ch.qos.logback:logback-core:1.1.3")
     testImplementation(kotlin("test-junit"))
 }
 
