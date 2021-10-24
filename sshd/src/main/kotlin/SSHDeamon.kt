@@ -4,12 +4,12 @@ import org.apache.sshd.server.SshServer
 import org.apache.sshd.server.keyprovider.AbstractGeneratorHostKeyProvider
 import org.apache.sshd.server.keyprovider.SimpleGeneratorHostKeyProvider
 import org.apache.sshd.server.subsystem.SubsystemFactory
-import java.nio.file.Path
+import java.nio.file.Paths
 
 
 object SSHDeamon {
     private const val BIND_ADDRESS = "127.0.0.1" // only listen to localhost
-    private const val SSHD_PORT = 2226
+    private const val SSHD_PORT = 2227
     //private val logger: Logger = LoggerFactory.getLogger(javaClass)
 
     @JvmStatic
@@ -20,7 +20,7 @@ object SSHDeamon {
 
         // If the host key does not exist yet, it will be auto-created
 
-        val hostKeyProvider: AbstractGeneratorHostKeyProvider = SimpleGeneratorHostKeyProvider(Path.of("hostkey.ser"))
+        val hostKeyProvider: AbstractGeneratorHostKeyProvider = SimpleGeneratorHostKeyProvider(Paths.get("hostkey.ser"))
 
         hostKeyProvider.algorithm = "RSA"
         sshd.keyPairProvider = hostKeyProvider
