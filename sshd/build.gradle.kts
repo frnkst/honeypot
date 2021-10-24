@@ -17,6 +17,9 @@ dependencies {
     implementation ("org.apache.sshd:sshd-sftp:2.7.0")
     implementation ("org.apache.sshd:sshd-common:2.7.0")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.9.6")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.6")
+    implementation("org.apache.kafka:kafka-clients:2.0.0")
     testImplementation(kotlin("test-junit"))
 }
 
