@@ -1,3 +1,3 @@
 
-rootProject.name = "deleteme"
+rootProject.name = "sshd"
 
