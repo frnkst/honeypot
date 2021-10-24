@@ -12,8 +12,8 @@ class LoginEventProducer {
     @Autowired
     private lateinit var producer: Producer
 
-    @Scheduled(fixedRate = 5000)
+    //@Scheduled(fixedRate = 5000)
     fun send() {
-        producer.sendMessage("this is an event (${Random.nextInt()})")
+        //producer.sendMessage("this is an event (${Random.nextInt()})")
     }
 }

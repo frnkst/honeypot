@@ -1,24 +1,37 @@
-import React, { useEffect, useState } from 'react'
-import ReactSpeedometer from "react-d3-speedometer"
+import React, {useEffect, useRef, useState} from 'react'
+import {ABC} from "./LoginEvents";
+
+export type LoginEvent = {
+	ip: string
+	user: string
+	password: string
+}
+
+
 
 export const Dashboard = () => {
 
 	const [listening, setListening] = useState(false);
-	const [cpuUsage, setcpuUsage] = useState(0);
-	const [memoryUsage, setmemoryUsage] = useState(0);
+	//const [cpuUsage, setcpuUsage] = useState(0);
+	//const [memoryUsage, setmemoryUsage] = useState(0);
 
-	let eventSource: EventSource | undefined = undefined;
+	let eventSource: EventSource = useRef<EventSource>(new EventSource("http://localhost:8080/events/login"));
 
+	const itemsRef = useRef<LoginEvent[]>([]);
+
+const loginEvents: LoginEvent[] = []
 
 	useEffect(() => {
 		if (!listening) {
-			eventSource = new EventSource("http://localhost:8080/event/login");
-			eventSource.onmessage = (event) => {
-				const usage = JSON.parse(event.data);
-				setcpuUsage(usage.ip)
-				setmemoryUsage(usage.username)
+			eventSource.onmessage = (event: any) => {
+				const loginEvent = JSON.parse(event.data);
+				//setit(loginEvent)
+				loginEvents.push(loginEvent)
+				itemsRef.current = loginEvents
+
+				console.table(loginEvents)
 			}
-			eventSource.onerror = (err) => {
+			eventSource.onerror = (err: any) => {
 				console.error("EventSource failed:", err);
 				eventSource?.close();
 			}
@@ -34,31 +47,8 @@ export const Dashboard = () => {
 	return (
 			<div style={{ "marginTop": "20px", "textAlign": "center" }}>
 				<h1>Dashboard</h1>
-				<div style={{ "display": "inline-flex" }}>
-					<div style={{"margin":"50px"}}>
-						<ReactSpeedometer
-								maxValue={100}
-								value={cpuUsage}
-								valueFormat={"d"}
-								customSegmentStops={[0, 25, 50, 75, 100]}
-								segmentColors={["#a3be8c", "#ebcb8b", "#d08770", "#bf616a"]}
-								currentValueText={"CPU Usage: ${value} %"}
-								textColor={"black"}
-						/>
-					</div>
 
-					<div style={{"margin":"50px"}}>
-						<ReactSpeedometer
-								maxValue={100}
-								value={memoryUsage}
-								valueFormat={"d"}
-								customSegmentStops={[0, 25, 50, 75, 100]}
-								segmentColors={["#a3be8c", "#ebcb8b", "#d08770", "#bf616a"]}
-								currentValueText={"Memory Usage: ${value} %"}
-								textColor={"black"}
-						/>
-					</div>
-				</div>
+				<ABC events={itemsRef.current}></ABC>
 
 			</div>
 	)
