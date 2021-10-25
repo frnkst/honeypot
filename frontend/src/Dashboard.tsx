@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react'
-import {ABC} from "./LoginEvents";
+import React, {useState} from 'react'
+import {SSEProvider, useSSE} from "react-hooks-sse";
 
 export type LoginEvent = {
 	ip: string
@@ -8,48 +8,26 @@ export type LoginEvent = {
 }
 
 
+const loginEvents: LoginEvent[] = [];
+
+const Comments = () => {
+	const state = useSSE<LoginEvent>('message', { ip: '', user: '', password: ''});
+	loginEvents.push(state)
+
+	return <>
+		{ loginEvents.map((event) => <><p>{ event.ip } { event.user } { event.password }</p></>) }
+		</>
+};
+
 
 export const Dashboard = () => {
-
-	const [listening, setListening] = useState(false);
-	//const [cpuUsage, setcpuUsage] = useState(0);
-	//const [memoryUsage, setmemoryUsage] = useState(0);
-
-	let eventSource: EventSource = useRef<EventSource>(new EventSource("http://localhost:8080/events/login"));
-
-	const itemsRef = useRef<LoginEvent[]>([]);
-
-const loginEvents: LoginEvent[] = []
-
-	useEffect(() => {
-		if (!listening) {
-			eventSource.onmessage = (event: any) => {
-				const loginEvent = JSON.parse(event.data);
-				//setit(loginEvent)
-				loginEvents.push(loginEvent)
-				itemsRef.current = loginEvents
-
-				console.table(loginEvents)
-			}
-			eventSource.onerror = (err: any) => {
-				console.error("EventSource failed:", err);
-				eventSource?.close();
-			}
-			setListening(true)
-		}
-		return () => {
-			eventSource?.close();
-			console.log("event closed")
-		}
-
-	}, [])
-
 	return (
 			<div style={{ "marginTop": "20px", "textAlign": "center" }}>
 				<h1>Dashboard</h1>
 
-				<ABC events={itemsRef.current}></ABC>
-
+				<SSEProvider endpoint="http://localhost:8080/events/login">
+					<Comments/>
+				</SSEProvider>
 			</div>
 	)
 }
