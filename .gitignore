@@ -2,3 +2,9 @@ hostkey.ser
 
 .idea
 venv
+
+ssh-honeypot/logins.txt
+ssh-honeypot/paramiko.log
+ssh-honeypot/server.key
+ssh-honeypot/server.key.pub
+
