@@ -1,18 +1,11 @@
-# Import KafkaConsumer from Kafka library
+# Small python consumer for testing purposes
 from kafka import KafkaConsumer
 from json import loads
 
-bootstrap_servers = ['localhost:29092']
-
-# Define topic name from where the message will recieve
-topicName = 'login'
-
-# Initialize consumer variable
-consumer = KafkaConsumer(topicName,
+consumer = KafkaConsumer('login',
                          group_id='group1',
-                         bootstrap_servers=bootstrap_servers,
+                         bootstrap_servers=['localhost:29092'],
                          value_deserializer=lambda x: loads(x.decode('utf-8')))
 
-# Read and print message from consumer
 for msg in consumer:
-  print("Topic Name=%s,Message=%s"%(msg.topic,msg.value))
+    print("Topic Name=%s,Message=%s" % (msg.topic, msg.value))
