@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 
 export type LoginEvent = {
 	ip: string
+	port: string
 	user: string
 	password: string
 }
@@ -20,8 +21,9 @@ export const LoginEvents = () => {
 			}
 
 			eventSource.onmessage = (event) => {
-				console.log("result", event.data);
-				setData(old => [...old, event.data])
+				const loginEvents = JSON.parse(event.data);
+				console.log("event: ", event.data);
+				setData(old => [...old, loginEvents])
 			}
 
 			eventSource.onerror = (event: any) => {
@@ -45,8 +47,10 @@ export const LoginEvents = () => {
 	return (
 			<>
 				Login Events
-				{data.map((d, i) =>
-						<p key={i}>{d}</p>
+				{data.map((loginEvent, i) =>
+						<>
+						<p key={i}>ip: {loginEvent.ip}, port: {loginEvent.port}, username: {loginEvent.user} password: {loginEvent.password}</p>
+						</>
 				)}
 
 			</>

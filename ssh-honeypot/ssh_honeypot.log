@@ -1,0 +1,471 @@
+2021-10-27 21:16:16,745 - root - INFO - New connection from: 127.0.0.1
+2021-10-27 21:16:16,746 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-27 21:16:18,567 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-27 21:16:18,567 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-27 21:16:22,312 - root - INFO - new client credentials (127.0.0.1): username: test, password: a
+2021-10-27 21:16:22,312 - paramiko.transport - INFO - Auth granted (password).
+2021-10-27 21:16:22,313 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-27 21:16:22,313 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-27 21:16:22,313 - root - INFO - Client compression (127.0.0.1): none
+2021-10-27 21:16:22,313 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-27 21:16:22,314 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-27 21:16:34,447 - root - INFO - Command receied (127.0.0.1): ls
+2021-10-27 21:16:34,448 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-27 21:16:36,870 - root - INFO - New connection from: 127.0.0.1
+2021-10-27 21:16:36,870 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-27 21:16:36,879 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-27 21:16:36,879 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-27 21:16:38,225 - root - INFO - new client credentials (127.0.0.1): username: test, password: b
+2021-10-27 21:16:38,225 - paramiko.transport - INFO - Auth granted (password).
+2021-10-27 21:16:38,226 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-27 21:16:38,226 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-27 21:16:38,226 - root - INFO - Client compression (127.0.0.1): none
+2021-10-27 21:16:38,227 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-27 21:16:38,227 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-27 21:16:43,731 - root - INFO - Command receied (127.0.0.1): ls
+2021-10-27 21:16:43,732 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-27 21:23:21,016 - root - INFO - New connection from: 127.0.0.1
+2021-10-27 21:23:21,021 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-27 21:23:21,029 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-27 21:23:21,029 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-27 21:23:21,816 - root - INFO - new client credentials (127.0.0.1): username: test, password: a
+2021-10-27 21:23:21,816 - paramiko.transport - INFO - Auth granted (password).
+2021-10-27 21:23:21,817 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-27 21:23:21,817 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-27 21:23:21,817 - root - INFO - Client compression (127.0.0.1): none
+2021-10-27 21:23:21,817 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-27 21:23:21,817 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-27 21:23:23,781 - root - INFO - Command receied (127.0.0.1): ls
+2021-10-27 21:23:23,782 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-27 21:24:46,835 - root - INFO - New connection from: 127.0.0.1
+2021-10-27 21:24:46,836 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-27 21:24:46,846 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-27 21:24:46,846 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-27 21:24:48,278 - root - INFO - new client credentials (127.0.0.1): username: test, password: t
+2021-10-27 21:24:48,278 - paramiko.transport - INFO - Auth granted (password).
+2021-10-27 21:24:48,278 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-27 21:24:48,279 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-27 21:24:48,279 - root - INFO - Client compression (127.0.0.1): none
+2021-10-27 21:24:48,279 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-27 21:24:48,279 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-27 21:24:50,005 - root - INFO - Command receied (127.0.0.1): ls
+2021-10-27 21:24:50,006 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-27 21:25:21,935 - root - INFO - New connection from: 127.0.0.1
+2021-10-27 21:25:21,936 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-27 21:25:21,944 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-27 21:25:21,945 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-27 21:25:22,583 - root - INFO - new client credentials (127.0.0.1): username: test, password: a
+2021-10-27 21:25:22,583 - paramiko.transport - INFO - Auth granted (password).
+2021-10-27 21:25:22,584 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-27 21:25:22,585 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-27 21:25:22,586 - root - INFO - Client compression (127.0.0.1): none
+2021-10-27 21:25:22,586 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-27 21:25:22,586 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-27 21:25:33,363 - root - INFO - New connection from: 127.0.0.1
+2021-10-27 21:25:33,364 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-27 21:25:33,373 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-27 21:25:33,373 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-27 21:25:33,912 - root - INFO - new client credentials (127.0.0.1): username: test, password: a
+2021-10-27 21:25:33,913 - paramiko.transport - INFO - Auth granted (password).
+2021-10-27 21:25:33,913 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-27 21:25:33,914 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-27 21:25:33,914 - root - INFO - Client compression (127.0.0.1): none
+2021-10-27 21:25:33,914 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-27 21:25:33,915 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-27 21:25:35,395 - root - INFO - Command receied (127.0.0.1): ls
+2021-10-27 21:25:35,395 - root - INFO - Response from honeypot (127.0.0.1): 
+2021-10-27 21:25:39,352 - root - INFO - Command receied (127.0.0.1): cat users.txt
+2021-10-27 21:25:44,258 - root - INFO - Command receied (127.0.0.1): df
+2021-10-27 21:25:44,874 - root - INFO - Command receied (127.0.0.1): sdfdf
+2021-10-27 21:25:50,769 - root - INFO - Command receied (127.0.0.1): dls
+2021-10-27 21:25:51,067 - root - INFO - Command receied (127.0.0.1): 
+2021-10-27 21:25:51,263 - root - INFO - Command receied (127.0.0.1): 
+2021-10-27 21:25:53,996 - root - INFO - Command receied (127.0.0.1): 
+2021-10-27 21:25:54,367 - root - INFO - Command receied (127.0.0.1): 
+2021-10-27 21:25:54,730 - root - INFO - Command receied (127.0.0.1): 
+2021-10-27 21:25:56,093 - root - INFO - Command receied (127.0.0.1): dfsdfd
+2021-10-27 21:25:57,294 - root - INFO - Command receied (127.0.0.1): ls -la
+2021-10-27 21:25:57,295 - root - INFO - Response from honeypot (127.0.0.1): 
+2021-10-27 21:26:01,734 - root - INFO - Command receied (127.0.0.1): ls -dfsf
+2021-10-27 21:26:01,734 - root - INFO - Response from honeypot (127.0.0.1): 
+2021-10-27 21:26:02,184 - root - INFO - Command receied (127.0.0.1): 
+2021-10-27 21:26:12,187 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-27 21:26:19,309 - root - INFO - New connection from: 127.0.0.1
+2021-10-27 21:26:19,310 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-27 21:26:19,319 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-27 21:26:19,319 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-27 21:26:20,259 - root - INFO - new client credentials (127.0.0.1): username: test, password: a
+2021-10-27 21:26:20,260 - paramiko.transport - INFO - Auth granted (password).
+2021-10-27 21:26:20,261 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-27 21:26:20,261 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-27 21:26:20,261 - root - INFO - Client compression (127.0.0.1): none
+2021-10-27 21:26:20,261 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-27 21:26:20,261 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-27 21:26:21,145 - root - INFO - Command receied (127.0.0.1): pwd
+2021-10-27 21:26:21,145 - root - INFO - Response from honeypot (127.0.0.1): 
+2021-10-27 21:26:22,733 - root - INFO - Command receied (127.0.0.1): ext
+2021-10-27 21:26:23,889 - root - INFO - Command receied (127.0.0.1): exit
+2021-10-27 21:26:23,890 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-27 21:26:35,224 - root - INFO - New connection from: 127.0.0.1
+2021-10-27 21:26:35,225 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-27 21:26:35,233 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-27 21:26:35,233 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-27 21:26:36,338 - root - INFO - new client credentials (127.0.0.1): username: test, password: a
+2021-10-27 21:26:36,338 - paramiko.transport - INFO - Auth granted (password).
+2021-10-27 21:26:36,339 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-27 21:26:36,340 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-27 21:26:36,340 - root - INFO - Client compression (127.0.0.1): none
+2021-10-27 21:26:36,340 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-27 21:26:36,340 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-27 21:26:37,194 - root - INFO - Command receied (127.0.0.1): exit
+2021-10-27 21:26:37,195 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-28 10:45:17,352 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 10:45:17,352 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2021-10-28 10:45:17,352 - kafka.conn - ERROR - Connect attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]> returned error 61. Disconnecting.
+2021-10-28 10:45:17,352 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Closing connection. KafkaConnectionError: 61 ECONNREFUSED
+2021-10-28 10:45:17,398 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 10:45:17,398 - kafka.conn - ERROR - Connect attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]> returned error 61. Disconnecting.
+2021-10-28 10:45:17,398 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Closing connection. KafkaConnectionError: 61 ECONNREFUSED
+2021-10-28 10:45:17,448 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv4 ('127.0.0.1', 29092)]>: connecting to localhost:29092 [('127.0.0.1', 29092) IPv4]
+2021-10-28 10:45:17,448 - kafka.conn - ERROR - Connect attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv4 ('127.0.0.1', 29092)]> returned error 61. Disconnecting.
+2021-10-28 10:45:17,448 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv4 ('127.0.0.1', 29092)]>: Closing connection. KafkaConnectionError: 61 ECONNREFUSED
+2021-10-28 10:45:44,250 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 10:45:44,250 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2021-10-28 10:45:44,251 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Connection complete.
+2021-10-28 10:45:44,356 - kafka.conn - ERROR - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: socket disconnected
+2021-10-28 10:45:44,356 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: Closing connection. KafkaConnectionError: socket disconnected
+2021-10-28 10:45:44,356 - kafka.conn - INFO - Broker is not v(0, 10) -- it did not recognize ApiVersionRequest_v0
+2021-10-28 10:45:44,357 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 10:45:44,357 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Connection complete.
+2021-10-28 10:45:44,460 - kafka.conn - ERROR - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: socket disconnected
+2021-10-28 10:45:44,460 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: Closing connection. KafkaConnectionError: socket disconnected
+2021-10-28 10:45:44,460 - kafka.conn - INFO - Broker is not v(0, 9) -- it did not recognize ListGroupsRequest_v0
+2021-10-28 10:45:44,461 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 10:45:44,461 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Connection complete.
+2021-10-28 10:45:44,564 - kafka.conn - ERROR - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: socket disconnected
+2021-10-28 10:45:44,564 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: Closing connection. KafkaConnectionError: socket disconnected
+2021-10-28 10:45:44,565 - kafka.conn - INFO - Broker is not v(0, 8, 2) -- it did not recognize GroupCoordinatorRequest_v0
+2021-10-28 10:45:44,565 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 10:45:44,565 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Connection complete.
+2021-10-28 10:45:44,667 - kafka.conn - ERROR - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: socket disconnected
+2021-10-28 10:45:44,668 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: Closing connection. KafkaConnectionError: socket disconnected
+2021-10-28 10:45:44,668 - kafka.conn - INFO - Broker is not v(0, 8, 1) -- it did not recognize OffsetFetchRequest_v0
+2021-10-28 10:45:44,668 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 10:45:44,669 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Connection complete.
+2021-10-28 10:45:44,773 - kafka.conn - ERROR - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: socket disconnected
+2021-10-28 10:45:44,774 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: Closing connection. KafkaConnectionError: socket disconnected
+2021-10-28 10:45:44,774 - kafka.conn - INFO - Broker is not v(0, 8, 0) -- it did not recognize MetadataRequest_v0
+2021-10-28 10:47:34,846 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 10:47:34,847 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2021-10-28 10:47:34,847 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Connection complete.
+2021-10-28 10:47:34,963 - kafka.conn - INFO - Broker version identified as 2.5.0
+2021-10-28 10:47:34,963 - kafka.conn - INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+2021-10-28 10:47:48,849 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 10:47:48,850 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 10:47:48,864 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 10:47:48,864 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 10:47:50,091 - paramiko.transport - ERROR - Unknown exception: Invalid format specifier
+2021-10-28 10:47:50,093 - paramiko.transport - ERROR - Traceback (most recent call last):
+2021-10-28 10:47:50,093 - paramiko.transport - ERROR -   File "/usr/local/lib/python3.10/site-packages/paramiko/transport.py", line 2109, in run
+2021-10-28 10:47:50,093 - paramiko.transport - ERROR -     handler(self.auth_handler, m)
+2021-10-28 10:47:50,093 - paramiko.transport - ERROR -   File "/usr/local/lib/python3.10/site-packages/paramiko/auth_handler.py", line 503, in _parse_userauth_request
+2021-10-28 10:47:50,093 - paramiko.transport - ERROR -     result = self.transport.server_object.check_auth_password(
+2021-10-28 10:47:50,093 - paramiko.transport - ERROR -   File "/Users/frank/Code/honeypot/ssh-honeypot/ssh-honeypot.py", line 76, in check_auth_password
+2021-10-28 10:47:50,093 - paramiko.transport - ERROR -     sendToKafka(f'{ "username": "{username}", "password": "{password}"}')
+2021-10-28 10:47:50,093 - paramiko.transport - ERROR - ValueError: Invalid format specifier
+2021-10-28 10:47:50,093 - paramiko.transport - ERROR - 
+2021-10-28 10:52:35,021 - kafka.conn - INFO - <BrokerConnection node_id=1 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 10:52:35,022 - kafka.conn - INFO - <BrokerConnection node_id=1 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Connection complete.
+2021-10-28 10:52:35,022 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: Closing connection. 
+2021-10-28 10:53:14,559 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2021-10-28 10:53:14,559 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2021-10-28 10:53:27,573 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 10:53:27,574 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2021-10-28 10:53:27,574 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Connection complete.
+2021-10-28 10:53:27,686 - kafka.conn - INFO - Broker version identified as 2.5.0
+2021-10-28 10:53:27,686 - kafka.conn - INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+2021-10-28 10:53:32,971 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 10:53:32,972 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 10:53:32,983 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 10:53:32,983 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 10:53:34,157 - paramiko.transport - ERROR - Unknown exception: Invalid format specifier
+2021-10-28 10:53:34,158 - paramiko.transport - ERROR - Traceback (most recent call last):
+2021-10-28 10:53:34,158 - paramiko.transport - ERROR -   File "/usr/local/lib/python3.10/site-packages/paramiko/transport.py", line 2109, in run
+2021-10-28 10:53:34,158 - paramiko.transport - ERROR -     handler(self.auth_handler, m)
+2021-10-28 10:53:34,158 - paramiko.transport - ERROR -   File "/usr/local/lib/python3.10/site-packages/paramiko/auth_handler.py", line 503, in _parse_userauth_request
+2021-10-28 10:53:34,158 - paramiko.transport - ERROR -     result = self.transport.server_object.check_auth_password(
+2021-10-28 10:53:34,158 - paramiko.transport - ERROR -   File "/Users/frank/Code/honeypot/ssh-honeypot/ssh-honeypot.py", line 77, in check_auth_password
+2021-10-28 10:53:34,159 - paramiko.transport - ERROR -     sendToKafka(f'{ "username": "{username}", "password": "{password}"}')
+2021-10-28 10:53:34,159 - paramiko.transport - ERROR - ValueError: Invalid format specifier
+2021-10-28 10:53:34,159 - paramiko.transport - ERROR - 
+2021-10-28 10:54:01,370 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2021-10-28 10:54:01,370 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2021-10-28 10:54:02,107 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 10:54:02,107 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2021-10-28 10:54:02,107 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Connection complete.
+2021-10-28 10:54:02,220 - kafka.conn - INFO - Broker version identified as 2.5.0
+2021-10-28 10:54:02,220 - kafka.conn - INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+2021-10-28 10:54:06,100 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 10:54:06,100 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2021-10-28 10:54:06,101 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Connection complete.
+2021-10-28 10:54:06,212 - kafka.conn - INFO - Broker version identified as 2.5.0
+2021-10-28 10:54:06,212 - kafka.conn - INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+2021-10-28 10:54:06,215 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2021-10-28 10:54:06,215 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2021-10-28 10:54:09,583 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 10:54:09,583 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 10:54:09,595 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 10:54:09,595 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 10:54:10,495 - paramiko.transport - ERROR - Unknown exception: Invalid format specifier
+2021-10-28 10:54:10,496 - paramiko.transport - ERROR - Traceback (most recent call last):
+2021-10-28 10:54:10,496 - paramiko.transport - ERROR -   File "/usr/local/lib/python3.10/site-packages/paramiko/transport.py", line 2109, in run
+2021-10-28 10:54:10,496 - paramiko.transport - ERROR -     handler(self.auth_handler, m)
+2021-10-28 10:54:10,496 - paramiko.transport - ERROR -   File "/usr/local/lib/python3.10/site-packages/paramiko/auth_handler.py", line 503, in _parse_userauth_request
+2021-10-28 10:54:10,497 - paramiko.transport - ERROR -     result = self.transport.server_object.check_auth_password(
+2021-10-28 10:54:10,497 - paramiko.transport - ERROR -   File "/Users/frank/Code/honeypot/ssh-honeypot/ssh-honeypot.py", line 77, in check_auth_password
+2021-10-28 10:54:10,497 - paramiko.transport - ERROR -     sendToKafka(f'{ "username": "{username}", "password": "{password}"}')
+2021-10-28 10:54:10,497 - paramiko.transport - ERROR - ValueError: Invalid format specifier
+2021-10-28 10:54:10,497 - paramiko.transport - ERROR - 
+2021-10-28 10:55:19,920 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2021-10-28 10:55:19,920 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2021-10-28 10:55:33,022 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 10:55:33,023 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 10:55:33,034 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 10:55:33,034 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 10:55:34,219 - root - INFO - new client credentials (127.0.0.1): username: test, password: df
+2021-10-28 10:55:34,219 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 10:55:34,220 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 10:55:34,220 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 10:55:34,220 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 10:55:34,220 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 10:55:34,221 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 10:55:37,066 - root - INFO - Command receied (127.0.0.1): ls
+2021-10-28 10:55:37,067 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-28 10:55:39,439 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 10:55:39,439 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 10:55:39,448 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 10:55:39,448 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 10:55:40,801 - root - INFO - new client credentials (127.0.0.1): username: test, password: hey
+2021-10-28 10:55:40,801 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 10:55:40,801 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 10:55:40,802 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 10:55:40,802 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 10:55:40,802 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 10:55:40,802 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 10:55:54,368 - root - INFO - Command receied (127.0.0.1): exut
+2021-10-28 10:55:54,369 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-28 10:55:57,630 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 10:55:57,631 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 10:55:57,641 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 10:55:57,641 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 10:55:59,577 - root - INFO - new client credentials (127.0.0.1): username: test, password: a
+2021-10-28 10:55:59,577 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 10:55:59,578 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 10:55:59,578 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 10:55:59,578 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 10:55:59,579 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 10:55:59,579 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 10:56:02,716 - root - INFO - Command receied (127.0.0.1): ls
+2021-10-28 10:56:02,717 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-28 10:56:47,705 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 10:56:47,706 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 10:56:47,716 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 10:56:47,716 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 10:56:49,629 - root - INFO - new client credentials (127.0.0.1): username: test, password: a
+2021-10-28 10:56:49,629 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 10:56:49,630 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 10:56:49,630 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 10:56:49,630 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 10:56:49,631 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 10:56:49,631 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 10:56:51,530 - root - INFO - Command receied (127.0.0.1): dfs
+2021-10-28 10:56:51,530 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-28 10:57:41,219 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 10:57:41,220 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 10:57:41,231 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 10:57:41,231 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 10:57:42,269 - root - INFO - new client credentials (127.0.0.1): username: test, password: dfs
+2021-10-28 10:57:42,269 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 10:57:42,270 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 10:57:42,270 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 10:57:42,270 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 10:57:42,270 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 10:57:42,270 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 10:57:45,633 - root - INFO - Command receied (127.0.0.1): exit
+2021-10-28 10:57:45,633 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-28 11:01:00,836 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:01:00,837 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:01:00,846 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:01:00,846 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:01:02,422 - paramiko.transport - ERROR - Unknown exception: name 'dumps' is not defined
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR - Traceback (most recent call last):
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR -   File "/usr/local/lib/python3.10/site-packages/paramiko/transport.py", line 2109, in run
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR -     handler(self.auth_handler, m)
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR -   File "/usr/local/lib/python3.10/site-packages/paramiko/auth_handler.py", line 503, in _parse_userauth_request
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR -     result = self.transport.server_object.check_auth_password(
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR -   File "/Users/frank/Code/honeypot/ssh-honeypot/ssh-honeypot.py", line 76, in check_auth_password
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR -     producer.send('login', value=data)
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR -   File "/usr/local/lib/python3.10/site-packages/kafka/producer/kafka.py", line 581, in send
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR -     value_bytes = self._serialize(
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR -   File "/usr/local/lib/python3.10/site-packages/kafka/producer/kafka.py", line 714, in _serialize
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR -     return f(data)
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR -   File "/Users/frank/Code/honeypot/ssh-honeypot/ssh-honeypot.py", line 27, in <lambda>
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR -     dumps(x).encode('utf-8'))
+2021-10-28 11:01:02,424 - paramiko.transport - ERROR - NameError: name 'dumps' is not defined
+2021-10-28 11:01:02,425 - paramiko.transport - ERROR - 
+2021-10-28 11:01:02,477 - kafka.conn - INFO - <BrokerConnection node_id=1 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 11:01:02,477 - kafka.conn - INFO - <BrokerConnection node_id=1 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Connection complete.
+2021-10-28 11:01:02,477 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: Closing connection. 
+2021-10-28 11:01:23,224 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2021-10-28 11:01:23,224 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2021-10-28 11:01:26,168 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:01:26,168 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:01:26,179 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:01:26,179 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:01:27,137 - root - INFO - new client credentials (127.0.0.1): username: test, password: dfs
+2021-10-28 11:01:27,137 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 11:01:27,137 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 11:01:27,138 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 11:01:27,138 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 11:01:27,138 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 11:01:27,138 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 11:01:29,524 - root - INFO - Command receied (127.0.0.1): ls
+2021-10-28 11:01:29,524 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-28 11:02:59,380 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2021-10-28 11:02:59,380 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2021-10-28 11:03:05,046 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:03:05,047 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:03:05,058 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:03:05,058 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:03:06,219 - root - INFO - new client credentials (127.0.0.1): username: test, password: hey
+2021-10-28 11:03:06,219 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 11:03:06,220 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 11:03:06,221 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 11:03:06,221 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 11:03:06,221 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 11:03:06,221 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 11:03:08,492 - root - INFO - Command receied (127.0.0.1): ls
+2021-10-28 11:03:08,493 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-28 11:04:05,031 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2021-10-28 11:04:05,031 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2021-10-28 11:04:11,741 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:04:11,742 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:04:11,753 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:04:11,753 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:04:13,642 - root - INFO - new client credentials (127.0.0.1): username: test, password: pythong
+2021-10-28 11:04:13,642 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 11:04:13,643 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 11:04:13,643 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 11:04:13,643 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 11:04:13,643 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 11:04:13,643 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 11:04:44,224 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:04:44,225 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:04:44,233 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:04:44,233 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:04:46,515 - root - INFO - new client credentials (127.0.0.1): username: test, password: pythong
+2021-10-28 11:04:46,515 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 11:04:46,516 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 11:04:46,516 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 11:04:46,517 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 11:04:46,517 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 11:04:46,517 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 11:05:05,911 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:05:05,911 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:05:05,920 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:05:05,920 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:05:08,080 - root - INFO - new client credentials (127.0.0.1): username: test, password: pythong
+2021-10-28 11:05:08,081 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 11:05:08,081 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 11:05:08,082 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 11:05:08,082 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 11:05:08,082 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 11:05:08,082 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 11:06:41,173 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2021-10-28 11:06:41,173 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2021-10-28 11:06:45,304 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:06:45,305 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:06:45,316 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:06:45,316 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:06:46,569 - root - INFO - new client credentials (127.0.0.1): username: test, password: hey
+2021-10-28 11:06:46,570 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 11:06:46,570 - kafka.conn - INFO - <BrokerConnection node_id=1 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: connecting to localhost:29092 [('::1', 29092, 0, 0) IPv6]
+2021-10-28 11:06:46,571 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 11:06:46,571 - kafka.conn - INFO - <BrokerConnection node_id=1 host=localhost:29092 <connecting> [IPv6 ('::1', 29092, 0, 0)]>: Connection complete.
+2021-10-28 11:06:46,571 - kafka.conn - INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:29092 <connected> [IPv6 ('::1', 29092, 0, 0)]>: Closing connection. 
+2021-10-28 11:06:46,572 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 11:06:46,572 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 11:06:46,572 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 11:06:46,572 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 11:07:08,998 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:07:08,998 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:07:09,007 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:07:09,007 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:07:09,956 - root - INFO - new client credentials (127.0.0.1): username: test, password: dfsd
+2021-10-28 11:07:09,956 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 11:07:09,957 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 11:07:09,958 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 11:07:09,958 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 11:07:09,958 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 11:07:09,958 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 11:07:39,725 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:07:39,725 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:07:39,734 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:07:39,734 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:07:40,874 - root - INFO - new client credentials (127.0.0.1): username: test, password: fdsfd
+2021-10-28 11:07:40,874 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 11:07:40,875 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 11:07:40,876 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 11:07:40,876 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 11:07:40,876 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 11:07:40,876 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 11:07:48,422 - root - INFO - Command receied (127.0.0.1): 
+2021-10-28 11:07:48,423 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-28 11:07:49,625 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:07:49,626 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:07:49,634 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:07:49,634 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:07:51,021 - root - INFO - new client credentials (127.0.0.1): username: test, password: sfdfsdfd
+2021-10-28 11:07:51,021 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 11:07:51,022 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 11:07:51,023 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 11:07:51,023 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 11:07:51,023 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 11:07:51,023 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 11:13:19,764 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:13:19,764 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:13:19,773 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:13:19,773 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:13:20,501 - root - INFO - new client credentials (127.0.0.1): username: test, password: dfdsf
+2021-10-28 11:13:20,501 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 11:13:20,502 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 11:13:20,502 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 11:13:20,502 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 11:13:20,502 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 11:13:20,502 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 11:13:53,365 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:13:53,366 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:13:53,375 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:13:53,375 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:13:54,201 - root - INFO - new client credentials (127.0.0.1): username: test, password: dfsdf
+2021-10-28 11:13:54,202 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 11:13:54,203 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 11:13:54,203 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 11:13:54,203 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 11:13:54,203 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 11:13:54,204 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 11:14:54,037 - root - INFO - New connection from: 127.0.0.1
+2021-10-28 11:14:54,038 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.1)
+2021-10-28 11:14:54,045 - paramiko.transport - INFO - Auth rejected (none).
+2021-10-28 11:14:54,046 - root - INFO - client called get_allowed_auths (127.0.0.1) with username test
+2021-10-28 11:14:55,130 - root - INFO - new client credentials (127.0.0.1): username: test, password: sdssddd
+2021-10-28 11:14:55,130 - paramiko.transport - INFO - Auth granted (password).
+2021-10-28 11:14:55,132 - root - INFO - client called check_channel_request (127.0.0.1): session
+2021-10-28 11:14:55,132 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2021-10-28 11:14:55,132 - root - INFO - Client compression (127.0.0.1): none
+2021-10-28 11:14:55,132 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.1
+2021-10-28 11:14:55,132 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2021-10-28 11:14:56,605 - root - INFO - Command receied (127.0.0.1): fdfsdf
+2021-10-28 11:14:56,606 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2021-10-28 11:21:03,363 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2021-10-28 11:21:03,364 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
