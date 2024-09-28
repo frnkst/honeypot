@@ -1,0 +1,6 @@
+.idea
+venv
+
+ssh-honeypot/server.key
+ssh-honeypot/server.key.pub
+
