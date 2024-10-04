@@ -1,5 +1,5 @@
 .idea
-venv
+ssh/.venv
 
 ssh/server.key
 ssh/server.key.pub
