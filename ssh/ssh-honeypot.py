@@ -1,5 +1,10 @@
 #!/usr/bin/env python2.7
-import socket, sys, threading
+import json
+import random
+import socket
+import sys
+import threading
+
 import paramiko
 from kafka import KafkaProducer
 
@@ -16,8 +21,15 @@ class SSHServerHandler (paramiko.ServerInterface):
         self.event = threading.Event()
 
     def check_auth_password(self, username, password):
+        data = {
+            "username": username,
+            "password": password
+        }
+        # Convert the dictionary to a JSON object
+        json_data = json.dumps(data)
+        num = random.randint(1, 100)
 
-        producer.send('logins', key=bytes(username, "UTF-8"), value=bytes(password, "UTF-8"))
+        producer.send('logins', key=bytes("99", "UTF-8"), value=bytes(json_data, "UTF-8"))
         producer.flush()
 
         LOGFILE_LOCK.acquire()
