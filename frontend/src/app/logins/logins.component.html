@@ -3,3 +3,10 @@
     {{ login.username}} {{ login.password}}
   }
 </div>
+
+{{ liveLogins | json}}
+
+  <h3>Data from SSE:</h3>
+  @for (liveLogin of liveLogins; track liveLogin) {
+    <div>{{ liveLogin.username}}:{{ liveLogin.password}}</div>
+  }
