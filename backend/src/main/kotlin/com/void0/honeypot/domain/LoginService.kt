@@ -39,7 +39,7 @@ class EventListener(private val template: ReactiveMongoTemplate) {
     fun subscribe(): Flux<Login> {
         return template
             .changeStream(Login::class.java)
-            .watchCollection("events")
+            .watchCollection("logins")
             .listen()
             .mapNotNull { it.body }
     }
