@@ -5,11 +5,14 @@ import socket
 import sys
 import threading
 import datetime
+import requests
 
 import paramiko
 from kafka import KafkaProducer
 
 producer = KafkaProducer(bootstrap_servers='127.0.0.1:9092')
+
+iplist = {}
 
 #generate keys with 'ssh-keygen -t rsa -f server.key'
 HOST_KEY = paramiko.RSAKey(filename='server.key')
@@ -18,25 +21,57 @@ LOGFILE = 'logins.txt'  #File to log the user:password combinations to
 LOGFILE_LOCK = threading.Lock()
 
 
+# A fun task would be to move this to a kafka streams application
+def get_ip_info(ip):
+    if ip not in iplist:
+        response = requests.get("http://ip-api.com/json/" + ip)
+        response.raise_for_status()
+        data = response.json()
+
+        if data['status'] != 'fail':
+            iplist[ip] = {
+                'city': data['city'],
+                'country': data['country'],
+                'isp': data['isp']
+            }
+        else:
+            iplist[ip] = {
+                'city': 'unknown',
+                'country': 'unknown',
+                'isp': 'unknown'
+            }
+
+    return iplist[ip]
+
+
+def kafka_publish(ip, username, password):
+    ip_info = get_ip_info(ip)
+
+    timestamp = datetime.datetime.utcnow()
+
+    data = {
+        "username": username,
+        "password": password,
+        "timestamp": timestamp.strftime("%m/%d/%Y, %H:%M:%S"),
+        "ip": ip,
+        "ipDetails": ip_info
+    }
+    # Convert the dictionary to a JSON object
+    json_data = json.dumps(data)
+    num = random.randint(1, 100)
+
+    producer.send('attack', key=bytes("99", "UTF-8"),
+                  value=bytes(json_data, "UTF-8"))
+    producer.flush()
+
+
 class SSHServerHandler(paramiko.ServerInterface):
-    def __init__(self):
+    def __init__(self, client_ip):
+        self.client_ip = client_ip
         self.event = threading.Event()
 
     def check_auth_password(self, username, password):
-        timestamp = datetime.datetime.utcnow()
-
-        data = {
-            "username": username,
-            "password": password,
-            "timestamp": timestamp.strftime("%m/%d/%Y, %H:%M:%S")
-        }
-        # Convert the dictionary to a JSON object
-        json_data = json.dumps(data)
-        num = random.randint(1, 100)
-
-        producer.send('attack', key=bytes("99", "UTF-8"),
-                      value=bytes(json_data, "UTF-8"))
-        producer.flush()
+        kafka_publish(self.client_ip, username, password)
 
         LOGFILE_LOCK.acquire()
         try:
@@ -52,11 +87,12 @@ class SSHServerHandler(paramiko.ServerInterface):
         return 'password'
 
 
-def handle_connection(client):
+def handle_connection(client, addr):
+    client_ip = addr[0]
     transport = paramiko.Transport(client)
     transport.add_server_key(HOST_KEY)
 
-    server_handler = SSHServerHandler()
+    server_handler = SSHServerHandler(client_ip)
 
     transport.start_server(server=server_handler)
 
@@ -77,7 +113,7 @@ def main():
         while (True):
             try:
                 client_socket, client_addr = server_socket.accept()
-                threading.Thread.start(handle_connection(client_socket))
+                threading.Thread.start(handle_connection(client_socket, client_addr))
             except Exception as e:
                 print("ERROR: Client handling")
                 print(e)

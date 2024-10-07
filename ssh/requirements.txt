@@ -2,3 +2,4 @@ paramiko
 kafka-python
 pymongo
 thread
+requests

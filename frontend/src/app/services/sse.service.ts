@@ -1,6 +1,19 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {Logins} from "./login-service.service";
+
+export type AttackEvent = {
+  timestamp: string,
+  username: string,
+  password: string,
+  ip: string,
+  ipDetails: IPDetails
+}
+
+export type IPDetails = {
+  city: string,
+  country: string,
+  isp: string,
+}
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +22,13 @@ export class SseService {
 
   constructor() { }
 
-  getServerSentEvent(url: string): Observable<Logins> {
+  getServerSentEvent(url: string): Observable<AttackEvent> {
     return new Observable(observer => {
       const eventSource = new EventSource(url);
-
       eventSource.onmessage = event => {
-        observer.next(JSON.parse(event.data));
+        const attackEvent = JSON.parse(event.data);
+        attackEvent.ipDetails = JSON.parse(attackEvent.ipDetails);
+        observer.next(attackEvent);
       };
 
       eventSource.onerror = error => {
