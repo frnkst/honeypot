@@ -5,4 +5,4 @@ import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository
 
 @Document(collection = "logins")
-data class Login(val username: String, val password: String)
+data class Login(val username: String, val password: String, val timestamp: String?)

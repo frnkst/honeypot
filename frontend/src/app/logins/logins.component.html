@@ -10,6 +10,6 @@
 
 <div class="live-updates">
   @for (liveLogin of liveLogins; track liveLogin) {
-    <div class="press-start-font">{{ liveLogin.username}}:{{ liveLogin.password}}</div>
+    <div class="press-start-font">{{ liveLogin.timestamp}} {{ liveLogin.username}}:{{ liveLogin.password}}</div>
   }
 </div>

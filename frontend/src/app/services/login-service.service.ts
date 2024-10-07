@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 export type Logins = {
   username: string,
   password: string
+  timestamp: string
 }
 
 @Injectable({
