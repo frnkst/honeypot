@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, NgZone} from '@angular/core';
 import {Observable} from "rxjs";
 
 export type AttackEvent = {
@@ -20,7 +20,7 @@ export type IPDetails = {
 })
 export class SseService {
 
-  constructor() { }
+  constructor(private _zone: NgZone) { }
 
   getServerSentEvent(url: string): Observable<AttackEvent> {
     return new Observable(observer => {
@@ -28,11 +28,16 @@ export class SseService {
       eventSource.onmessage = event => {
         const attackEvent = JSON.parse(event.data);
         attackEvent.ipDetails = JSON.parse(attackEvent.ipDetails);
-        observer.next(attackEvent);
+
+        this._zone.run(() => {
+          observer.next(attackEvent);
+        });
       };
 
       eventSource.onerror = error => {
-        observer.error(error);
+        this._zone.run(() => {
+          observer.error(error);
+        });
       };
 
       return () => eventSource.close();

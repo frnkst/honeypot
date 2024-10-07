@@ -12,11 +12,10 @@ import {Observable} from "rxjs";
 export class LiveAttacksComponent {
   attackEvents: AttackEvent[] = [];
 
-  constructor(private sseService: SseService, private cdr: ChangeDetectorRef) {
+  constructor(private sseService: SseService) {
     this.sseService.getServerSentEvent('http://localhost:8080/attack-events')
     .subscribe(event => {
       this.attackEvents = [event, ...this.attackEvents]
-      this.cdr.detectChanges();
     });
   }
 }
