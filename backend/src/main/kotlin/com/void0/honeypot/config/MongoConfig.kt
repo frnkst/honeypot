@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.convert.MappingMongoConverter
 import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories
 
 @Configuration
-@EnableReactiveMongoRepositories(basePackages = ["com.void0.honeypot.domain"])
+@EnableReactiveMongoRepositories(basePackages = ["com.void0.honeypot.usecase"])
 class MongoConfig : AbstractReactiveMongoConfiguration() {
     override fun getDatabaseName() = "yourDatabaseName"
 
