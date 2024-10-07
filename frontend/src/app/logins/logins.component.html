@@ -6,7 +6,10 @@
 
 {{ liveLogins | json}}
 
-  <h3>Data from SSE:</h3>
+
+
+<div class="live-updates">
   @for (liveLogin of liveLogins; track liveLogin) {
-    <div>{{ liveLogin.username}}:{{ liveLogin.password}}</div>
+    <div class="press-start-font">{{ liveLogin.username}}:{{ liveLogin.password}}</div>
   }
+</div>
