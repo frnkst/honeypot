@@ -12,16 +12,19 @@ class AttackController(val attackService: AttackService) {
 
     @GetMapping("/attacks")
     @CrossOrigin
-    fun getLogins(): Flux<AttackModel?> {
-        return attackService.allAttacks();
+    fun getAllAttacks(): Flux<Attack?> {
+        return attackService.allAttacks()
     }
 
+    @GetMapping("/top-passwords")
+    @CrossOrigin
+    fun getTopPasswords(): Flux<TopPasswords>? {
+        return attackService.topPasswords()
+    }
 
     @GetMapping(path = ["/attack-events"], produces = [MediaType.TEXT_EVENT_STREAM_VALUE])
     @CrossOrigin
-    fun streamFlux(): Flux<AttackModel>? {
-        return attackService.subscribeToAttackEvents();
-
-
+    fun getAttackEvents(): Flux<Attack>? {
+        return attackService.subscribeToAttackEvents()
     }
 }
