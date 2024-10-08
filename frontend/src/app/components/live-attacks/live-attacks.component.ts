@@ -1,6 +1,5 @@
-import {ChangeDetectorRef, Component} from '@angular/core';
+import {Component} from '@angular/core';
 import {AttackEvent, SseService} from "../../services/sse.service";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-live-attacks',

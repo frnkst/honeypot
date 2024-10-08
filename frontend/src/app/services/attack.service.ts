@@ -6,6 +6,11 @@ export type TopPasswords = {
   count: number;
 }
 
+export type TopUsernames = {
+  username: string;
+  count: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +20,9 @@ export class AttackService {
 
   getTopPasswords() {
     return this.httpClient.get<TopPasswords[]>("http://localhost:8080/top-passwords")
+  }
 
+  getTopUsernames() {
+    return this.httpClient.get<TopUsernames[]>("http://localhost:8080/top-usernames")
   }
 }

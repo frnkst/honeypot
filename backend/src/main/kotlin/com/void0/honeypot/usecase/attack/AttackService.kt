@@ -40,5 +40,17 @@ class AttackService {
         return reactiveMongoTemplate.aggregate(aggregation, "attack", TopPasswords::class.java)
     }
 
+    fun topUsernames(): Flux<TopUsernames>? {
+        // TODO: How to sort by password ASC when they have the same count?
+        val aggregation = newAggregation(
+            group("username").count().`as`("count"),
+            sort(Sort.by(Sort.Direction.DESC, "count", "username", "_id")),
+            limit(10),
+            project().and("_id").`as`("username").andInclude("count"),
+        )
+
+        return reactiveMongoTemplate.aggregate(aggregation, "attack", TopUsernames::class.java)
+    }
+
 
 }

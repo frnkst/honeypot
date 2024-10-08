@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AttackService, TopPasswords} from "../../services/attack.service";
-import {Observable, of} from "rxjs";
+import {Observable, of, switchMap, timer} from "rxjs";
 import {AsyncPipe} from "@angular/common";
 
 @Component({
@@ -18,10 +18,7 @@ export class TopPasswordsComponent implements OnInit {
   constructor(private attackService: AttackService) {}
 
   ngOnInit() {
-    this.topPasswords = this.attackService.getTopPasswords();
-    this.topPasswords.subscribe((a) => {
-      console.log("frank", a)
-    })
-
+    this.topPasswords = timer(0, 5000)
+      .pipe(switchMap(() => this.attackService.getTopPasswords())) ;
   }
 }

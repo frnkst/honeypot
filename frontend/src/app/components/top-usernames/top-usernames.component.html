@@ -1,0 +1,7 @@
+<h2>Top Usernames</h2>
+
+@for (topUsername of topUsernames | async; track topUsername) {
+  <div>
+    {{ topUsername.username }} {{ topUsername.count }}
+  </div>
+}

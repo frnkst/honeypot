@@ -22,6 +22,12 @@ class AttackController(val attackService: AttackService) {
         return attackService.topPasswords()
     }
 
+    @GetMapping("/top-usernames")
+    @CrossOrigin
+    fun getTopUsernames(): Flux<TopUsernames>? {
+        return attackService.topUsernames()
+    }
+
     @GetMapping(path = ["/attack-events"], produces = [MediaType.TEXT_EVENT_STREAM_VALUE])
     @CrossOrigin
     fun getAttackEvents(): Flux<Attack>? {
