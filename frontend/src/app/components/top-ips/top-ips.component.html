@@ -1,0 +1,7 @@
+<h2>Top IPs</h2>
+
+@for (topIP of topIPs  | async; track topIP) {
+  <div>
+    {{ topIP.ip }} {{ topIP.count }}
+  </div>
+}

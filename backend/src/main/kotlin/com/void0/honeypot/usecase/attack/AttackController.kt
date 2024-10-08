@@ -28,6 +28,12 @@ class AttackController(val attackService: AttackService) {
         return attackService.topUsernames()
     }
 
+    @GetMapping("/top-ips")
+    @CrossOrigin
+    fun getTopIps(): Flux<TopIPAdresses>? {
+        return attackService.topIPAdresses()
+    }
+
     @GetMapping(path = ["/attack-events"], produces = [MediaType.TEXT_EVENT_STREAM_VALUE])
     @CrossOrigin
     fun getAttackEvents(): Flux<Attack>? {

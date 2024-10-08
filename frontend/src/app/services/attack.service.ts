@@ -11,6 +11,11 @@ export type TopUsernames = {
   count: number;
 }
 
+export type TopIPs = {
+  ip: string;
+  count: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,5 +29,9 @@ export class AttackService {
 
   getTopUsernames() {
     return this.httpClient.get<TopUsernames[]>("http://localhost:8080/top-usernames")
+  }
+
+  getTopIps() {
+    return this.httpClient.get<TopIPs[]>("http://localhost:8080/top-ips")
   }
 }

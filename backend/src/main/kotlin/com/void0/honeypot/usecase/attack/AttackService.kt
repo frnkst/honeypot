@@ -52,5 +52,17 @@ class AttackService {
         return reactiveMongoTemplate.aggregate(aggregation, "attack", TopUsernames::class.java)
     }
 
+    fun topIPAdresses(): Flux<TopIPAdresses>? {
+        val aggregation = newAggregation(
+            group("ip").count().`as`("count"),
+            sort(Sort.by(Sort.Direction.DESC, "count", "ip", "_id")),
+            limit(10),
+            project().and("_id").`as`("ip").andInclude("count"),
+        )
+
+        return reactiveMongoTemplate.aggregate(aggregation, "attack", TopIPAdresses::class.java)
+    }
+
+
 
 }
