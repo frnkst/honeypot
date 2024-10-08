@@ -5,6 +5,7 @@ import com.mongodb.client.model.Accumulators
 import com.mongodb.client.model.Sorts
 import com.void0.honeypot.repository.MongoRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.domain.Sort
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate
 import org.springframework.data.mongodb.core.aggregation.Aggregation
 import org.springframework.data.mongodb.core.aggregation.Aggregation.*
@@ -19,25 +20,27 @@ class AttackService {
     private val mongoRepository: MongoRepository? = null
 
     @Autowired
-    private val reactiveMongoTemplate: ReactiveMongoTemplate? = null
+    private lateinit var reactiveMongoTemplate: ReactiveMongoTemplate
 
     fun allAttacks(): Flux<Attack?> = mongoRepository!!.findAll()
 
     fun subscribeToAttackEvents(): Flux<Attack>? {
         return reactiveMongoTemplate
-            ?.changeStream(Attack::class.java)
-            ?.watchCollection("attack")
-            ?.listen()
-            ?.mapNotNull { it.body }
+            .changeStream(Attack::class.java)
+            .watchCollection("attack")
+            .listen()
+            .mapNotNull { it.body }
     }
 
     fun topPasswords(): Flux<TopPasswords>? {
         val aggregation = newAggregation(
-            group("\$password").count().`as`("count"),
-            limit(10)
+            group("password").count().`as`("count"),
+            sort(Sort.by(Sort.Direction.DESC, "count")),
+            limit(10),
+            project().and("_id").`as`("password").andInclude("count")
         )
 
-        return reactiveMongoTemplate?.aggregate(aggregation, "attack", TopPasswords::class.java)
+        return reactiveMongoTemplate.aggregate(aggregation, "attack", TopPasswords::class.java)
     }
 
 
