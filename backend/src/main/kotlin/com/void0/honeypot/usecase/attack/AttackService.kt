@@ -1,15 +1,11 @@
 package com.void0.honeypot.usecase.attack
 
 
-import com.mongodb.client.model.Accumulators
-import com.mongodb.client.model.Sorts
 import com.void0.honeypot.repository.MongoRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Sort
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate
-import org.springframework.data.mongodb.core.aggregation.Aggregation
 import org.springframework.data.mongodb.core.aggregation.Aggregation.*
-import org.springframework.data.mongodb.core.aggregation.AggregationResults
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 
@@ -33,11 +29,12 @@ class AttackService {
     }
 
     fun topPasswords(): Flux<TopPasswords>? {
+        // TODO: How to sort by password ASC when they have the same count?
         val aggregation = newAggregation(
             group("password").count().`as`("count"),
-            sort(Sort.by(Sort.Direction.DESC, "count")),
+            sort(Sort.by(Sort.Direction.DESC, "count", "password", "_id")),
             limit(10),
-            project().and("_id").`as`("password").andInclude("count")
+            project().and("_id").`as`("password").andInclude("count"),
         )
 
         return reactiveMongoTemplate.aggregate(aggregation, "attack", TopPasswords::class.java)
