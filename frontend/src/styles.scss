@@ -13,9 +13,6 @@
 }
 
 body {
-  background: radial-gradient(#fff 15%, rgba(0,0,0,0) 16%), radial-gradient(#fef 10%, rgba(0,0,0,0) 16%), #fff;
-  background-position: 0 0, 30px 30px;
-  background-origin: padding-box;
-  background-clip: border-box;
-  background-size: 60px 60px;
+  background-image: linear-gradient(to right, #87d1de 0%, #cda4da 100%);
 }
+
