@@ -3,8 +3,6 @@ import {TopPasswordsPresentationComponent} from "./top-passwords-presentation.co
 import {TopPasswordsPresentation} from "./top-passwords-presentation.interface";
 import {of} from "rxjs";
 
-
-
 // story meta config
 const meta: Meta<TopPasswordsPresentationComponent> = {
   title: "TopPasswordsPresentation",
@@ -12,22 +10,29 @@ const meta: Meta<TopPasswordsPresentationComponent> = {
 };
 export default meta;
 
-
-// mocks
-const userMock: TopPasswordsPresentation = {
+const mockInput: TopPasswordsPresentation = {
   passwords: of([{
-    password: "123456",
-    count: 5
+    password: "admin",
+    count: 504
+  }, {
+    password: "1234",
+    count: 302
+  }, {
+    password: "root",
+    count: 201
+  }, {
+    password: "test",
+    count: 200
+  }, {
+    password: "hello",
+    count: 13
   }])
 };
 
-
-// stories
 type TopPasswordsPresentationStory = StoryObj<TopPasswordsPresentationComponent>;
 
-
-export const primary: TopPasswordsPresentationStory = {
+export const Default: TopPasswordsPresentationStory = {
   args: {
-    topPasswords: userMock
+    topPasswords: mockInput
   }
 };
