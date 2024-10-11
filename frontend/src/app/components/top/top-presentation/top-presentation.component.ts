@@ -15,4 +15,5 @@ import {Observable} from "rxjs";
 export class TopPresentationComponent {
   @Input() top?: Observable<Top[]>
   @Input() type?: TopType
+  @Input() title?: string
 }

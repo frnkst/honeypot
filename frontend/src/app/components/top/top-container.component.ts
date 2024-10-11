@@ -16,6 +16,7 @@ import {
 })
 export class TopContainerComponent implements OnInit {
   @Input() type? : TopType
+  @Input() title? : string
 
   protected top: Observable<Top[]> = of([]);
 
