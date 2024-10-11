@@ -2,9 +2,11 @@
 
 ## TO DO
 
+- Time stats: 15 mins, 1h, 24h, since beginning. Kafka? --> Kafka Streams App
+- Attacks per Minute (Attack Rate) --> Kafka Streams App
+- Gauge: Heavy Attack ongoing, Medium attack, quiet
 - Write tests
 - Do proper DDD
-- Send SSE on insert to mongo
 - Build and deploy
 
 This works:
