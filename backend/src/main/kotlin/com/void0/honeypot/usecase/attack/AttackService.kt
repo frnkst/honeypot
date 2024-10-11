@@ -28,11 +28,11 @@ class AttackService {
             .mapNotNull { it.body }
     }
 
-    fun top(type: TopType): Flux<Top>? {
+    fun top(type: String): Flux<Top>? {
         // TODO: How to sort by password ASC when they have the same count?
         val aggregation = newAggregation(
-            group(type.value).count().`as`("count"),
-            sort(Sort.by(Sort.Direction.DESC, "count", "type.value", "_id")),
+            group(type).count().`as`("count"),
+            sort(Sort.by(Sort.Direction.DESC, "count", type, "_id")),
             limit(10),
             project().and("_id").`as`("item").andInclude("count"),
         )

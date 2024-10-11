@@ -19,7 +19,7 @@ class AttackController(val attackService: AttackService) {
 
     @GetMapping("/top")
     @CrossOrigin
-    fun getTop(@RequestParam type: TopType): Flux<Top>? {
+    fun getTop(@RequestParam type: String): Flux<Top>? {
         return attackService.top(type)
     }
 
