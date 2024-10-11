@@ -1,98 +1,47 @@
 {
     "pipes": [],
-    "interfaces": [
-        {
-            "name": "TopPasswordsPresentation",
-            "id": "interface-TopPasswordsPresentation-5c3d001ed74c8712197672c89d83976c5063e711906bdea7fde9866f99dd20a739bcac4fb720c76afbc498968fe92492f0318999698494881a3c28c9063cf145",
-            "file": "src/app/components/top-passwords/top-passwords-presentation/top-passwords-presentation.interface.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import {TopPasswords} from \"../../../services/attack.service\";\nimport {Observable} from \"rxjs\";\n\nexport interface TopPasswordsPresentation {\n  passwords: Observable<TopPasswords[]>\n}\n",
-            "properties": [
-                {
-                    "name": "passwords",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Observable<TopPasswords[]>",
-                    "optional": false,
-                    "description": "",
-                    "line": 5
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 171,
-            "methods": [],
-            "extends": []
-        },
-        {
-            "name": "User",
-            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
-            "file": "src/stories/user.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export interface User {\n  name: string;\n}\n",
-            "properties": [
-                {
-                    "name": "name",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 2
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 171,
-            "methods": [],
-            "extends": []
-        }
-    ],
+    "interfaces": [],
     "injectables": [
         {
             "name": "AttackService",
-            "id": "injectable-AttackService-a6cb698162ad51daf6fd414a725a442d5f7ddfddafa7d8a36d4847bb2ebb8da7dbfe12b0732b54c4ae54d5a6b5af8ddca56ab7818e8dbff6af39356cd6f30ef5",
+            "id": "injectable-AttackService-89fcc6a6f270260501371c30f02c005220cdc9b8366be2d02833363587754c1558601f6337547bc1981f61390607cfdc4f634676f8224a30d942a488198c2c0f",
             "file": "src/app/services/attack.service.ts",
             "properties": [],
             "methods": [
                 {
-                    "name": "getTopIps",
-                    "args": [],
+                    "name": "getTop",
+                    "args": [
+                        {
+                            "name": "type",
+                            "type": "TopType",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 34,
+                    "line": 18,
                     "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "getTopPasswords",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 26,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "getTopUsernames",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 30,
-                    "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "type",
+                            "type": "TopType",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport {HttpClient} from \"@angular/common/http\";\n\nexport type TopPasswords = {\n  password: string;\n  count: number;\n}\n\nexport type TopUsernames = {\n  username: string;\n  count: number;\n}\n\nexport type TopIPs = {\n  ip: string;\n  count: number;\n}\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AttackService {\n\n  constructor(private httpClient: HttpClient) { }\n\n  getTopPasswords() {\n    return this.httpClient.get<TopPasswords[]>(\"http://localhost:8080/top-passwords\")\n  }\n\n  getTopUsernames() {\n    return this.httpClient.get<TopUsernames[]>(\"http://localhost:8080/top-usernames\")\n  }\n\n  getTopIps() {\n    return this.httpClient.get<TopIPs[]>(\"http://localhost:8080/top-ips\")\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport {HttpClient} from \"@angular/common/http\";\n\nexport type Top = {\n  item: string;\n  count: number;\n}\n\nexport type TopType = 'password' | 'username' | 'ip'\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AttackService {\n\n  constructor(private httpClient: HttpClient) { }\n\n  getTop(type: TopType) {\n    return this.httpClient.get<Top[]>(`http://localhost:8080/top?type=${type}`)\n  }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -106,7 +55,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 22,
+                "line": 14,
                 "jsdoctags": [
                     {
                         "name": "httpClient",
@@ -255,141 +204,8 @@
             "templateData": "<app-dashboard></app-dashboard>\n"
         },
         {
-            "name": "ButtonComponent",
-            "id": "component-ButtonComponent-d7bf0323e6da130e2609e2af0117b4a8d7cd874132206af50bf43dfc37044485fe50f2867ea76525730dd195b9b95a43802a12dadc6ad5cd7bf2faa07f19f0da",
-            "file": "src/stories/button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-button",
-            "styleUrls": [
-                "./button.css"
-            ],
-            "styles": [],
-            "template": " <button  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "backgroundColor",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\nWhat background color to use",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 25,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "label",
-                    "defaultValue": "'Button'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 760,
-                            "end": 773,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 761,
-                                "end": 769,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "required"
-                            },
-                            "comment": ""
-                        }
-                    ],
-                    "rawdescription": "\n\nButton contents\n\n",
-                    "description": "<p>Button contents</p>\n",
-                    "line": 37,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "primary",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\nIs this the principal call to action on the page?",
-                    "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 21,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "size",
-                    "defaultValue": "'medium'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\nHow large should the button be?",
-                    "description": "<p>How large should the button be?</p>\n",
-                    "line": 29,
-                    "type": "\"small\" | \"medium\" | \"large\"",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onClick",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\nOptional click handler",
-                    "description": "<p>Optional click handler</p>\n",
-                    "line": 41,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  template: ` <button\n  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>`,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  /** Is this the principal call to action on the page? */\n  @Input()\n  primary = false;\n\n  /** What background color to use */\n  @Input()\n  backgroundColor?: string;\n\n  /** How large should the button be? */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /** Optional click handler */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".storybook-button {\n  display: inline-block;\n  cursor: pointer;\n  border: 0;\n  border-radius: 3em;\n  font-weight: 700;\n  line-height: 1;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n.storybook-button--primary {\n  background-color: #1ea7fd;\n  color: white;\n}\n.storybook-button--secondary {\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  background-color: transparent;\n  color: #333;\n}\n.storybook-button--small {\n  padding: 10px 16px;\n  font-size: 12px;\n}\n.storybook-button--medium {\n  padding: 11px 20px;\n  font-size: 14px;\n}\n.storybook-button--large {\n  padding: 12px 24px;\n  font-size: 16px;\n}\n",
-                    "styleUrl": "./button.css"
-                }
-            ],
-            "stylesData": "",
-            "extends": [],
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 43
-                    }
-                }
-            }
-        },
-        {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-a009f20b691c4b077dc529867b6d5a49e860e608663402c9c050513bd552dfe2ed8a508b859466114567dc6243946d273b9d1874be80e9d7f1aaa2012288f1ca",
+            "id": "component-DashboardComponent-6ad5d4483956bce6c62a9ed8dfe120be38e33ba4fc444cbdf4755487d13bb02ce1ca066e5f4903371c5287f3be29acffb36da84252b343507779b62882a3519b",
             "file": "src/app/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -419,114 +235,20 @@
                     "type": "component"
                 },
                 {
-                    "name": "TopUsernamesComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "TopIpsComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "TopPasswordsContainerComponent",
+                    "name": "TopContainerComponent",
                     "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport {LiveAttacksComponent} from \"../components/live-attacks/live-attacks.component\";\nimport {TopPasswordsComponent} from \"../components/top-passwords/top-passwords.component\";\nimport {TopUsernamesComponent} from \"../components/top-usernames/top-usernames.component\";\nimport {TopIpsComponent} from \"../components/top-ips/top-ips.component\";\nimport {\n  TopPasswordsContainerComponent\n} from \"../components/top-passwords/top-passwords-container.component\";\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [\n    LiveAttacksComponent,\n    TopUsernamesComponent,\n    TopIpsComponent,\n    TopPasswordsContainerComponent\n  ],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss'\n})\nexport class DashboardComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport {LiveAttacksComponent} from \"../components/live-attacks/live-attacks.component\";\nimport {\n  TopContainerComponent\n} from \"../components/top/top-container.component\";\n\n@Component({\n  selector: 'app-dashboard',\n  standalone: true,\n  imports: [\n    LiveAttacksComponent,\n    TopContainerComponent\n  ],\n  templateUrl: './dashboard.component.html',\n  styleUrl: './dashboard.component.scss'\n})\nexport class DashboardComponent {\n\n}\n",
             "styleUrl": "./dashboard.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<app-live-attacks></app-live-attacks>\n\n<app-top-passwords-container></app-top-passwords-container>\n<app-top-usernames></app-top-usernames>\n<app-top-ips></app-top-ips>\n"
-        },
-        {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-48b9abe37706bc42f20cfa97ed9f943678344ea7d254c0c82183c657750c2191b43486fe730c778627b2ea6aa0e2f33a7abcf3ce08b68ad18b062ad99ea97acb",
-            "file": "src/stories/header.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-header",
-            "styleUrls": [
-                "./header.css"
-            ],
-            "styles": [],
-            "template": "<header>  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 66,
-                    "type": "User | null",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onCreateAccount",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 75,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogin",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 69,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogout",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 72,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                },
-                {
-                    "name": "ButtonComponent",
-                    "type": "component"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>`,\n  styleUrls: ['./header.css'],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".storybook-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-header svg {\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header h1 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 6px 0 6px 10px;\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n}\n\n.storybook-header button + button {\n  margin-left: 10px;\n}\n\n.storybook-header .welcome {\n  margin-right: 10px;\n  color: #333;\n  font-size: 14px;\n}\n",
-                    "styleUrl": "./header.css"
-                }
-            ],
-            "stylesData": "",
-            "extends": []
+            "templateData": "<app-live-attacks></app-live-attacks>\n\n<app-top-container type=\"password\"></app-top-container>\n<app-top-container type=\"username\"></app-top-container>\n<app-top-container type=\"ip\"></app-top-container>\n\n"
         },
         {
             "name": "LiveAttacksComponent",
@@ -604,221 +326,43 @@
             "templateData": "<h2>Live Attacks</h2>\n\n<div class=\"live-attacks\">\n  @for (event of attackEvents; track event) {\n    <div class=\"press-start-font\">{{ event.timestamp}} {{ event.ip}} {{ event.username}}:{{ event.password}}</div>\n  }\n</div>\n"
         },
         {
-            "name": "PageComponent",
-            "id": "component-PageComponent-21dd6eb370b4983b5c21c84d40e6f54d266a9d9af9889e6e76b35c43058bd53b3e451bad089d5adf4bea46647ba10265a2fa8cb15630398e75636307d4817fc6",
-            "file": "src/stories/page.component.ts",
+            "name": "TopContainerComponent",
+            "id": "component-TopContainerComponent-d7c023032a35fad3cd013f7bf57184cf8dd0740251f05579424a6b8bb19c6f7736dc44ee52a60be69a1dafaa7c5f5811cb7abf1e6ff22b5ea7655af1aa1b8c61",
+            "file": "src/app/components/top/top-container.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "storybook-page",
-            "styleUrls": [
-                "./page.css"
-            ],
-            "styles": [],
-            "template": "<article>  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "User | null",
-                    "optional": false,
-                    "description": "",
-                    "line": 69
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "doCreateAccount",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 79,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "doLogin",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 75,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "doLogout",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 71,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                },
-                {
-                    "name": "HeaderComponent",
-                    "type": "component"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { HeaderComponent } from './header.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-page',\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>`,\n  styleUrls: ['./page.css'],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".storybook-page {\n  margin: 0 auto;\n  padding: 48px 20px;\n  max-width: 600px;\n  color: #333;\n  font-size: 14px;\n  line-height: 24px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-page h2 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 0 0 4px;\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n}\n\n.storybook-page p {\n  margin: 1em 0;\n}\n\n.storybook-page a {\n  color: #1ea7fd;\n  text-decoration: none;\n}\n\n.storybook-page ul {\n  margin: 1em 0;\n  padding-left: 30px;\n}\n\n.storybook-page li {\n  margin-bottom: 8px;\n}\n\n.storybook-page .tip {\n  display: inline-block;\n  vertical-align: top;\n  margin-right: 10px;\n  border-radius: 1em;\n  background: #e7fdd8;\n  padding: 4px 12px;\n  color: #66bf3c;\n  font-weight: 700;\n  font-size: 11px;\n  line-height: 12px;\n}\n\n.storybook-page .tip-wrapper {\n  margin-top: 40px;\n  margin-bottom: 40px;\n  font-size: 13px;\n  line-height: 20px;\n}\n\n.storybook-page .tip-wrapper svg {\n  display: inline-block;\n  vertical-align: top;\n  margin-top: 3px;\n  margin-right: 4px;\n  width: 12px;\n  height: 12px;\n}\n\n.storybook-page .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
-                    "styleUrl": "./page.css"
-                }
-            ],
-            "stylesData": "",
-            "extends": []
-        },
-        {
-            "name": "TopIpsComponent",
-            "id": "component-TopIpsComponent-2be5bc736892b1667c80b668e876856765d7de1770ddc4a0d078426dc2be7eb4d8391cb66bbc0e6100a81efb4eece769aebb6d8df234ee6916b9c49b77dc7fa4",
-            "file": "src/app/components/top-ips/top-ips.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-top-ips",
+            "selector": "app-top-container",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./top-ips.component.html"
+                "./top-container.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "TopType",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "topIPs",
+                    "name": "top",
                     "defaultValue": "of([])",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Observable<TopIPs[]>",
+                    "type": "Observable<Top[]>",
                     "optional": false,
                     "description": "",
-                    "line": 16,
-                    "modifierKind": [
-                        124
-                    ]
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
                     "line": 20,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "AsyncPipe",
-                    "type": "pipe"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport {Observable, of, switchMap, timer} from \"rxjs\";\nimport {AttackService, TopIPs, TopPasswords} from \"../../services/attack.service\";\nimport {AsyncPipe} from \"@angular/common\";\n\n@Component({\n  selector: 'app-top-ips',\n  standalone: true,\n  imports: [\n    AsyncPipe\n  ],\n  templateUrl: './top-ips.component.html',\n  styleUrl: './top-ips.component.scss'\n})\nexport class TopIpsComponent {\n  protected topIPs: Observable<TopIPs[]> = of([]);\n\n  constructor(private attackService: AttackService) {}\n\n  ngOnInit() {\n    this.topIPs = timer(0, 5000)\n    .pipe(switchMap(() => this.attackService.getTopIps())) ;\n  }\n}\n",
-            "styleUrl": "./top-ips.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "attackService",
-                        "type": "AttackService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 16,
-                "jsdoctags": [
-                    {
-                        "name": "attackService",
-                        "type": "AttackService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "extends": [],
-            "templateData": "<h2>Top IPs</h2>\n\n@for (topIP of topIPs  | async; track topIP) {\n  <div>\n    {{ topIP.ip }} {{ topIP.count }}\n  </div>\n}\n"
-        },
-        {
-            "name": "TopPasswordsContainerComponent",
-            "id": "component-TopPasswordsContainerComponent-26bbe5533797444662449abfaeb2e25688fd8bfc4c8d678a30ff86f6b73cc65c002a8308bdb225d3ffefef674ac4d76028dfc34819e141da6cf1c65efd307898",
-            "file": "src/app/components/top-passwords/top-passwords-container.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-top-passwords-container",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./top-passwords-container.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "topPasswords",
-                    "defaultValue": "of([])",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Observable<TopPasswords[]>",
-                    "optional": false,
-                    "description": "",
-                    "line": 21,
                     "modifierKind": [
                         124
                     ]
@@ -831,7 +375,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 24,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -843,15 +387,15 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "TopPasswordsPresentationComponent",
+                    "name": "TopPresentationComponent",
                     "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, OnInit} from '@angular/core';\nimport {Observable, of, switchMap, timer} from \"rxjs\";\nimport {AttackService, TopPasswords} from \"../../services/attack.service\";\nimport {\n  TopPasswordsPresentationComponent\n} from \"./top-passwords-presentation/top-passwords-presentation.component\";\nimport {\n  TopPasswordsPresentation\n} from \"./top-passwords-presentation/top-passwords-presentation.interface\";\n\n@Component({\n  selector: 'app-top-passwords-container',\n  standalone: true,\n  imports: [\n    TopPasswordsPresentationComponent\n  ],\n  templateUrl: './top-passwords-container.component.html',\n  styleUrl: './top-passwords-container.component.scss'\n})\nexport class TopPasswordsContainerComponent implements OnInit {\n  protected topPasswords: Observable<TopPasswords[]> = of([]);\n\n  constructor(private attackService: AttackService) {}\n\n  ngOnInit() {\n    this.topPasswords = timer(0, 5000)\n    .pipe(switchMap(() => this.attackService.getTopPasswords())) ;\n  }\n}\n\n\n\n",
-            "styleUrl": "./top-passwords-container.component.scss",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport {Observable, of, switchMap, timer} from \"rxjs\";\nimport {AttackService, Top, TopType} from \"../../services/attack.service\";\nimport {\n  TopPresentationComponent\n} from \"./top-presentation/top-presentation.component\";\n\n@Component({\n  selector: 'app-top-container',\n  standalone: true,\n  imports: [\n    TopPresentationComponent\n  ],\n  templateUrl: './top-container.component.html',\n  styleUrl: './top-container.component.scss'\n})\nexport class TopContainerComponent implements OnInit {\n  @Input() type? : TopType\n\n  protected top: Observable<Top[]> = of([]);\n\n  constructor(private attackService: AttackService) {}\n\n  ngOnInit() {\n    this.top = timer(0, 5000)\n    .pipe(switchMap(() => this.attackService.getTop(this.type!!))) ;\n  }\n}\n\n\n\n",
+            "styleUrl": "./top-container.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -868,7 +412,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 21,
+                "line": 20,
                 "jsdoctags": [
                     {
                         "name": "attackService",
@@ -885,32 +429,40 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-top-passwords-presentation [topPasswords]=\"{ passwords: topPasswords }\"></app-top-passwords-presentation>\n"
+            "templateData": "<app-top-presentation\n  [top]=\"top\"\n  [type]=\"type\"\n></app-top-presentation>\n"
         },
         {
-            "name": "TopPasswordsPresentationComponent",
-            "id": "component-TopPasswordsPresentationComponent-7882316aa42059bc36514d6c92233ad292a1bccaa647b3c44717e5fd9622103b14c2ac34eaf4f527ab926b6a8feb0dc4be54df78ea54cc6f53a068d05caf0c28",
-            "file": "src/app/components/top-passwords/top-passwords-presentation/top-passwords-presentation.component.ts",
+            "name": "TopPresentationComponent",
+            "id": "component-TopPresentationComponent-211c330d7ef3f5a420ed3d3949b746fd4983aa4ba55ddbf7d33d074679e73d0dfaf33e40d44ba7643842860dfa65f01c9f0fe65b3a38620c953ec698262302a5",
+            "file": "src/app/components/top/top-presentation/top-presentation.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-top-passwords-presentation",
+            "selector": "app-top-presentation",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./top-passwords-presentation.component.html"
+                "./top-presentation.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "topPasswords",
+                    "name": "top",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "Observable<Top[]>",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 17,
-                    "type": "TopPasswordsPresentation",
+                    "type": "TopType",
                     "decorators": []
                 }
             ],
@@ -931,110 +483,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\nimport {AsyncPipe} from \"@angular/common\";\nimport {TopPasswords} from \"../../../services/attack.service\";\nimport {Observable, of} from \"rxjs\";\nimport {TopPasswordsPresentation} from \"./top-passwords-presentation.interface\";\n\n@Component({\n  selector: 'app-top-passwords-presentation',\n  standalone: true,\n\timports: [\n\t\tAsyncPipe\n\t],\n  templateUrl: './top-passwords-presentation.component.html',\n  styleUrl: './top-passwords-presentation.component.scss'\n})\nexport class TopPasswordsPresentationComponent {\n  @Input() topPasswords?: TopPasswordsPresentation\n\n}\n",
-            "styleUrl": "./top-passwords-presentation.component.scss",
+            "sourceCode": "import {Component, Input} from '@angular/core';\nimport {AsyncPipe} from \"@angular/common\";\nimport {Top, TopType} from \"../../../services/attack.service\";\nimport {Observable} from \"rxjs\";\n\n@Component({\n  selector: 'app-top-presentation',\n  standalone: true,\n\timports: [\n\t\tAsyncPipe\n\t],\n  templateUrl: './top-presentation.component.html',\n  styleUrl: './top-presentation.component.scss'\n})\nexport class TopPresentationComponent {\n  @Input() top?: Observable<Top[]>\n  @Input() type?: TopType\n}\n",
+            "styleUrl": "./top-presentation.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<h2>Top Passwords</h2>\n\n@for (topPassword of topPasswords.passwords | async; track topPassword) {\n  <div>\n    {{ topPassword.password }} {{ topPassword.count }}\n  </div>\n}\n"
-        },
-        {
-            "name": "TopUsernamesComponent",
-            "id": "component-TopUsernamesComponent-b15aee643dcea0ed4086ee72a5223965586c30ddd674adf67de4f21aab42c524be079d9129c59595a9501d4457a5811ab322df3029758a2c48822a4635f40886",
-            "file": "src/app/components/top-usernames/top-usernames.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-top-usernames",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./top-usernames.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "topUsernames",
-                    "defaultValue": "of([])",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Observable<TopUsernames[]>",
-                    "optional": false,
-                    "description": "",
-                    "line": 16,
-                    "modifierKind": [
-                        124
-                    ]
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 20,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "AsyncPipe",
-                    "type": "pipe"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import {Component, OnInit} from '@angular/core';\nimport {Observable, of, switchMap, timer} from \"rxjs\";\nimport {AttackService, TopPasswords, TopUsernames} from \"../../services/attack.service\";\nimport {AsyncPipe} from \"@angular/common\";\n\n@Component({\n  selector: 'app-top-usernames',\n  standalone: true,\n  imports: [\n    AsyncPipe\n  ],\n  templateUrl: './top-usernames.component.html',\n  styleUrl: './top-usernames.component.scss'\n})\nexport class TopUsernamesComponent implements OnInit {\n  protected topUsernames: Observable<TopUsernames[]> = of([]);\n\n  constructor(private attackService: AttackService) {}\n\n  ngOnInit() {\n    this.topUsernames = timer(0, 5000).pipe(switchMap(() => this.attackService.getTopUsernames()));\n  }\n}\n",
-            "styleUrl": "./top-usernames.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "attackService",
-                        "type": "AttackService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 16,
-                "jsdoctags": [
-                    {
-                        "name": "attackService",
-                        "type": "AttackService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "extends": [],
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<h2>Top Usernames</h2>\n\n@for (topUsername of topUsernames | async; track topUsername) {\n  <div>\n    {{ topUsername.username }} {{ topUsername.count }}\n  </div>\n}\n"
+            "templateData": "<div class=\"top-passwords\">\n  <div>\n    <div class=\"headline\">\n      <h1 class=\"lato-regular\">Top 10 {{ type }}</h1>\n    </div>\n    <div class=\"grid lato-regular\">\n      <h3>\n        Password\n      </h3>\n      <h3>\n        Count\n      </h3>\n\n      @for (topItem of top | async; track topItem) {\n        <div>\n          {{ topItem.item }}\n        </div>\n        <div>\n          {{ topItem.count }}\n        </div>\n      }\n    </div>\n  </div>\n</div>\n"
         }
     ],
     "modules": [],
@@ -1076,7 +531,7 @@
                 "kind": 187
             },
             {
-                "name": "TopIPs",
+                "name": "Top",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "literal type",
@@ -1087,26 +542,15 @@
                 "kind": 187
             },
             {
-                "name": "TopPasswords",
+                "name": "TopType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "literal type",
+                "rawtype": "\"password\" | \"username\" | \"ip\"",
                 "file": "src/app/services/attack.service.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "kind": 187
-            },
-            {
-                "name": "TopUsernames",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "literal type",
-                "file": "src/app/services/attack.service.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 187
+                "kind": 192
             }
         ],
         "enumerations": [],
@@ -1153,7 +597,7 @@
             ],
             "src/app/services/attack.service.ts": [
                 {
-                    "name": "TopIPs",
+                    "name": "Top",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "literal type",
@@ -1164,33 +608,22 @@
                     "kind": 187
                 },
                 {
-                    "name": "TopPasswords",
+                    "name": "TopType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "literal type",
+                    "rawtype": "\"password\" | \"username\" | \"ip\"",
                     "file": "src/app/services/attack.service.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "kind": 187
-                },
-                {
-                    "name": "TopUsernames",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "literal type",
-                    "file": "src/app/services/attack.service.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 187
+                    "kind": 192
                 }
             ]
         }
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 0,
         "status": "low",
         "files": [
             {
@@ -1222,48 +655,21 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/top-ips/top-ips.component.ts",
+                "filePath": "src/app/components/top/top-container.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "TopIpsComponent",
+                "name": "TopContainerComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/top-passwords/top-passwords-container.component.ts",
+                "filePath": "src/app/components/top/top-presentation/top-presentation.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "TopPasswordsContainerComponent",
+                "name": "TopPresentationComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/top-passwords/top-passwords-presentation/top-passwords-presentation.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "TopPasswordsPresentationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/top-passwords/top-passwords-presentation/top-passwords-presentation.interface.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "TopPasswordsPresentation",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/top-usernames/top-usernames.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "TopUsernamesComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -1281,7 +687,7 @@
                 "linktype": "injectable",
                 "name": "AttackService",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -1291,42 +697,6 @@
                 "name": "SseService",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 83,
-                "coverageCount": "5/6",
-                "status": "very-good"
-            },
-            {
-                "filePath": "src/stories/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/page.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "PageComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/user.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "User",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
                 "status": "low"
             }
         ]

@@ -1,38 +1,37 @@
-import type { Meta, StoryObj } from "@storybook/angular";
+import type {Meta, StoryObj} from "@storybook/angular";
 import {TopPresentationComponent} from "./top-presentation.component";
-import {TopPasswordsPresentation} from "./top-passwords-presentation.interface";
 import {of} from "rxjs";
 
 // story meta config
 const meta: Meta<TopPresentationComponent> = {
-  title: "TopPasswordsPresentation",
+  title: "Top Presentation",
   component: TopPresentationComponent
 };
 export default meta;
 
-const mockInput: TopPasswordsPresentation = {
-  passwords: of([{
-    password: "admin",
+const mockInput=
+  of([{
+    item: "admin",
     count: 504
   }, {
-    password: "1234",
+    item: "1234",
     count: 302
   }, {
-    password: "root",
+    item: "root",
     count: 201
   }, {
-    password: "test",
+    item: "test",
     count: 200
   }, {
-    password: "hello",
+    item: "hello",
     count: 13
-  }])
-};
+  }]);
 
 type TopPasswordsPresentationStory = StoryObj<TopPresentationComponent>;
 
 export const Default: TopPasswordsPresentationStory = {
   args: {
-    topPasswords: mockInput
+    top: mockInput,
+    type: 'password'
   }
 };
