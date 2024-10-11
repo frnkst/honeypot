@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopPasswordsPresentationComponent } from './top-passwords-presentation.component';
+import { TopPresentationComponent } from './top-presentation.component';
 
 describe('TopPasswordsPresentationComponent', () => {
-  let component: TopPasswordsPresentationComponent;
-  let fixture: ComponentFixture<TopPasswordsPresentationComponent>;
+  let component: TopPresentationComponent;
+  let fixture: ComponentFixture<TopPresentationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TopPasswordsPresentationComponent]
+      imports: [TopPresentationComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TopPasswordsPresentationComponent);
+    fixture = TestBed.createComponent(TopPresentationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

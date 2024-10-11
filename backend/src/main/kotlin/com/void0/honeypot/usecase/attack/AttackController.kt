@@ -3,6 +3,7 @@ package com.void0.honeypot.usecase.attack
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import reactor.core.publisher.Flux
 
@@ -16,22 +17,10 @@ class AttackController(val attackService: AttackService) {
         return attackService.allAttacks()
     }
 
-    @GetMapping("/top-passwords")
+    @GetMapping("/top")
     @CrossOrigin
-    fun getTopPasswords(): Flux<TopPasswords>? {
-        return attackService.topPasswords()
-    }
-
-    @GetMapping("/top-usernames")
-    @CrossOrigin
-    fun getTopUsernames(): Flux<TopUsernames>? {
-        return attackService.topUsernames()
-    }
-
-    @GetMapping("/top-ips")
-    @CrossOrigin
-    fun getTopIps(): Flux<TopIPAdresses>? {
-        return attackService.topIPAdresses()
+    fun getTop(@RequestParam type: TopType): Flux<Top>? {
+        return attackService.top(type)
     }
 
     @GetMapping(path = ["/attack-events"], produces = [MediaType.TEXT_EVENT_STREAM_VALUE])
@@ -39,4 +28,10 @@ class AttackController(val attackService: AttackService) {
     fun getAttackEvents(): Flux<Attack>? {
         return attackService.subscribeToAttackEvents()
     }
+}
+
+enum class TopType(val value: String) {
+    PASSWORD("password"),
+    USERNAME("username"),
+    IP("ip")
 }

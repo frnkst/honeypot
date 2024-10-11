@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopUsernamesComponent } from './top-usernames.component';
+import { TopContainerComponent } from './top-container.component';
 
-describe('TopUsernamesComponent', () => {
-  let component: TopUsernamesComponent;
-  let fixture: ComponentFixture<TopUsernamesComponent>;
+describe('TopPasswordsContainerComponent', () => {
+  let component: TopContainerComponent;
+  let fixture: ComponentFixture<TopContainerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TopUsernamesComponent]
+      imports: [TopContainerComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TopUsernamesComponent);
+    fixture = TestBed.createComponent(TopContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

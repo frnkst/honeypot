@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/angular";
-import {TopPasswordsPresentationComponent} from "./top-passwords-presentation.component";
+import {TopPresentationComponent} from "./top-presentation.component";
 import {TopPasswordsPresentation} from "./top-passwords-presentation.interface";
 import {of} from "rxjs";
 
 // story meta config
-const meta: Meta<TopPasswordsPresentationComponent> = {
+const meta: Meta<TopPresentationComponent> = {
   title: "TopPasswordsPresentation",
-  component: TopPasswordsPresentationComponent
+  component: TopPresentationComponent
 };
 export default meta;
 
@@ -29,7 +29,7 @@ const mockInput: TopPasswordsPresentation = {
   }])
 };
 
-type TopPasswordsPresentationStory = StoryObj<TopPasswordsPresentationComponent>;
+type TopPasswordsPresentationStory = StoryObj<TopPresentationComponent>;
 
 export const Default: TopPasswordsPresentationStory = {
   args: {

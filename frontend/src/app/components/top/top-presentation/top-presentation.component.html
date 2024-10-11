@@ -11,12 +11,12 @@
         Count
       </h3>
 
-      @for (topPassword of topPasswords?.passwords | async; track topPassword) {
+      @for (topItem of top | async; track topItem) {
         <div>
-          {{ topPassword.password }}
+          {{ topItem.item }}
         </div>
         <div>
-          {{ topPassword.count }}
+          {{ topItem.count }}
         </div>
       }
     </div>
