@@ -2,7 +2,6 @@
 ssh/.venv
 data
 tmp
-
 ssh/server.key
 ssh/server.key.pub
 ssh/logins.txt
