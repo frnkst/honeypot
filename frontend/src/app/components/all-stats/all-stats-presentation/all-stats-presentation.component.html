@@ -7,12 +7,14 @@
       <h3>
       </h3>
       <h3>
-        Frank
       </h3>
 
-      <div>
-        {{ (allStats | async) | json }}
-      </div>
+      @if (allStats | async; as stats) {
+        One Minute: <div>{{ stats.value1 }}</div>
+        15 Minute: <div>{{ stats.value15 }}</div>
+        1 Hour: <div>{{ stats.value60 }}</div>
+        24 Hours: <div>{{ stats.value1440 }}</div>
+      }
     </div>
   </div>
 </div>
