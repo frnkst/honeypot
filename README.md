@@ -5,11 +5,11 @@
 - Time stats: 15 mins, 1h, 24h, since beginning. Kafka? --> Kafka Streams App
 - Attacks per Minute (Attack Rate) --> Kafka Streams App
 - Gauge: Heavy Attack ongoing, Medium attack, quiet
-- Write tests
+  - Write tests         c
 - Do proper DDD
 - Build and deploy
 
-This works:
+This works:                         c
 https://github.com/UpSync-Dev/docker-compose-mongo-replica-set
 
 Links
@@ -23,6 +23,6 @@ mongodb://mongo1:30001,mongo2:30002,mongo3:30003/?replicaSet=my-replica-set
 
 
 
-## Architecture
+## Architecture c
 
 ![architecture](./docs/architecture.png)

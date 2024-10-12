@@ -3,13 +3,15 @@ import {LiveAttacksComponent} from "../components/live-attacks/live-attacks.comp
 import {
   TopContainerComponent
 } from "../components/top/top-container.component";
+import {AllStatsContainerComponent} from "../components/all-stats/all-stats-container.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
     LiveAttacksComponent,
-    TopContainerComponent
+    TopContainerComponent,
+    AllStatsContainerComponent
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'

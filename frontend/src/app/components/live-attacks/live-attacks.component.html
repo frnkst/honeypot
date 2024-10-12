@@ -2,6 +2,6 @@
 
 <div class="live-attacks">
   @for (event of attackEvents; track event) {
-    <div class="press-start-font">{{ event.timestamp}} {{ event.ip}} {{ event.username}}:{{ event.password}}</div>
+    <div class="press-start-font">{{ fromUnixTime(Number(event.timestamp)) }} {{ event.ip}} {{ event.username}}:{{ event.password}}</div>
   }
 </div>

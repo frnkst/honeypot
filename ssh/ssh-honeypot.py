@@ -4,7 +4,8 @@ import random
 import socket
 import sys
 import threading
-import datetime
+import time
+
 import requests
 
 import paramiko
@@ -47,12 +48,15 @@ def get_ip_info(ip):
 def kafka_publish(ip, username, password):
     ip_info = get_ip_info(ip)
 
-    timestamp = datetime.datetime.utcnow()
+    from datetime import datetime, timezone
+
+# Get the current UTC timestamp
+    current_unix_timestamp = time.time()
 
     data = {
         "username": username,
         "password": password,
-        "timestamp": timestamp.strftime("%m/%d/%Y, %H:%M:%S"),
+        "timestamp": current_unix_timestamp,
         "ip": ip,
         "ipDetails": ip_info
     }

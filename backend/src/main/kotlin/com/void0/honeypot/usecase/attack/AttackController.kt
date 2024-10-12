@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import reactor.core.publisher.Flux
+import reactor.core.publisher.Mono
 
 
 @RestController
@@ -28,10 +29,10 @@ class AttackController(val attackService: AttackService) {
     fun getAttackEvents(): Flux<Attack>? {
         return attackService.subscribeToAttackEvents()
     }
-}
 
-enum class TopType(val value: String) {
-    PASSWORD("password"),
-    USERNAME("username"),
-    IP("ip")
+    @GetMapping(path = ["/all-stats"])
+    @CrossOrigin
+    fun getAllStats(): Mono<StatsSummary> {
+        return attackService.getStatsInParallel()
+    }
 }

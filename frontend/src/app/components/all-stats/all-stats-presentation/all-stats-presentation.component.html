@@ -1,0 +1,19 @@
+<div class="top-passwords">
+  <div>
+    <div class="headline">
+      <h1 class="lato-regular">All stats</h1>
+    </div>
+    <div class="grid lato-regular">
+      <h3>
+      </h3>
+      <h3>
+        Frank
+      </h3>
+
+      <div>
+        {{ (allStats | async) | json }}
+      </div>
+    </div>
+  </div>
+</div>
+

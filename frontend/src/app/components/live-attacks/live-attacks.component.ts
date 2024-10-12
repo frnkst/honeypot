@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AttackEvent, SseService} from "../../services/sse.service";
+import {fromUnixTime} from "date-fns";
 
 @Component({
   selector: 'app-live-attacks',
@@ -17,4 +18,7 @@ export class LiveAttacksComponent {
       this.attackEvents = [event, ...this.attackEvents]
     });
   }
+
+  protected readonly fromUnixTime = fromUnixTime;
+  protected readonly Number = Number;
 }
