@@ -3,3 +3,4 @@ kafka-python
 pymongo
 thread
 requests
+pymongo

@@ -9,9 +9,7 @@ import time
 import requests
 
 import paramiko
-from kafka import KafkaProducer
-
-producer = KafkaProducer(bootstrap_servers='127.0.0.1:9092')
+import pymongo
 
 iplist = {}
 
@@ -63,10 +61,13 @@ def kafka_publish(ip, username, password):
     # Convert the dictionary to a JSON object
     json_data = json.dumps(data)
     num = random.randint(1, 100)
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    mydb = myclient["honeypot"]
+    mycol = mydb["attack"]
 
-    producer.send('attack', key=bytes("99", "UTF-8"),
-                  value=bytes(json_data, "UTF-8"))
-    producer.flush()
+    mydict = { "name": "John", "address": "Highway 37" }
+
+    x = mycol.insert_one(mydict)
 
 
 class SSHServerHandler(paramiko.ServerInterface):

@@ -18,6 +18,9 @@ https://medium.com/@JosephOjo/mongodb-replica-set-with-docker-compose-5ab95c02af
 Start mongo with replica set
 `docker run --rm -d -p 27017:27017 -h $(hostname) --name mongo mongo:6.0.5 --replSet=dbrs && sleep 5 && docker exec mongo mongosh --quiet --eval "rs.initiate();"`
 
+Start one docker container:
+`docker run --name mongodb -p 27017:27017 -d mongodb/mongodb-community-server:5.0-ubuntu2004`
+
 Connection string for compass:
 mongodb://mongo1:30001,mongo2:30002,mongo3:30003/?replicaSet=my-replica-set
 
