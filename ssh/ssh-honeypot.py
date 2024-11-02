@@ -45,10 +45,6 @@ def get_ip_info(ip):
 
 def kafka_publish(ip, username, password):
     ip_info = get_ip_info(ip)
-
-    from datetime import datetime, timezone
-
-# Get the current UTC timestamp
     current_unix_timestamp = time.time()
 
     data = {
@@ -59,15 +55,13 @@ def kafka_publish(ip, username, password):
         "ipDetails": ip_info
     }
     # Convert the dictionary to a JSON object
-    json_data = json.dumps(data)
-    num = random.randint(1, 100)
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     mydb = myclient["honeypot"]
     mycol = mydb["attack"]
 
     mydict = { "name": "John", "address": "Highway 37" }
 
-    x = mycol.insert_one(mydict)
+    x = mycol.insert_one(data)
 
 
 class SSHServerHandler(paramiko.ServerInterface):
