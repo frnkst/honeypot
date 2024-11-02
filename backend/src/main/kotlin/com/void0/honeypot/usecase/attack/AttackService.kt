@@ -29,14 +29,6 @@ class AttackService {
 
     fun allAttacks(): Flux<Attack?> = mongoRepository!!.findAll()
 
-    fun subscribeToAttackEvents(): Flux<Attack>? {
-        return reactiveMongoTemplate
-            .changeStream(Attack::class.java)
-            .watchCollection("attack")
-            .listen()
-            .mapNotNull { it.body }
-    }
-
     fun top(type: String): Flux<Top>? {
         // TODO: How to sort by password ASC when they have the same count?
         val aggregation = newAggregation(
