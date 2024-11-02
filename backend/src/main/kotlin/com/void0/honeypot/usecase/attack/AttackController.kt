@@ -28,4 +28,11 @@ class AttackController(val attackService: AttackService) {
     fun getAllStats(): Mono<StatsSummary> {
         return attackService.getStatsInParallel()
     }
+
+    @GetMapping(path = ["/most-recent"])
+    @CrossOrigin
+    fun getMostRecentAttempts(): Flux<Attack>? {
+        return attackService.getMostRecentAttempts()
+    }
+}
 }

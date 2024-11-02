@@ -1,23 +1,25 @@
 import {Component} from '@angular/core';
-import {AttackEvent, SseService} from "../../services/sse.service";
 import {fromUnixTime} from "date-fns";
+import {AttackService, MostRecent} from "../../services/attack.service";
+import {Observable} from "rxjs";
+import {AsyncPipe} from "@angular/common";
 
 @Component({
   selector: 'app-live-attacks',
   standalone: true,
-  imports: [],
+  imports: [
+    AsyncPipe
+  ],
   templateUrl: './live-attacks.component.html',
   styleUrl: './live-attacks.component.scss'
 })
 export class LiveAttacksComponent {
-  attackEvents: AttackEvent[] = [];
+  attackEvents: Observable<MostRecent[]>;
 
-  constructor(private sseService: SseService) {
-    this.sseService.getServerSentEvent('http://localhost:8080/attack-events')
-    .subscribe(event => {
-      this.attackEvents = [event, ...this.attackEvents]
-    });
+  constructor(private attackService: AttackService) {
+    this.attackEvents = this.attackService.getMostRecentAttempts();
   }
+
 
   protected readonly fromUnixTime = fromUnixTime;
   protected readonly Number = Number;

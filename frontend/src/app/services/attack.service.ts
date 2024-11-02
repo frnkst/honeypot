@@ -6,6 +6,13 @@ export type Top = {
   count: number;
 }
 
+export type MostRecent = {
+  username: string,
+  password: string,
+  timestamp: string,
+  ip: string,
+}
+
 export type AllStats = {
   value1: number;
   value15: number;
@@ -28,5 +35,9 @@ export class AttackService {
 
   getAllStats() {
     return this.httpClient.get<AllStats>(`http://localhost:8080/all-stats`)
+  }
+
+  getMostRecentAttempts() {
+    return this.httpClient.get<MostRecent[]>(`http://localhost:8080/most-recent`)
   }
 }

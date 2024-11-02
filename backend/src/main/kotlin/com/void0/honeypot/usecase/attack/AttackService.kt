@@ -2,10 +2,6 @@ package com.void0.honeypot.usecase.attack
 
 
 import com.void0.honeypot.repository.MongoRepository
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
-import kotlinx.coroutines.coroutineScope
-import org.apache.kafka.shaded.io.opentelemetry.proto.metrics.v1.Summary
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Sort
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate
@@ -64,10 +60,21 @@ class AttackService {
         val query = Query(Criteria.where("timestamp").gte(timeAgo))
         return reactiveMongoTemplate.count(query, "attack")
     }
+
+    fun getMostRecentAttempts(): Flux<Attack>? {
+        return mongoRepository?.findFirst20ByOrderByIdDesc()
+    }
 }
 
 
 data class StatsSummary(
+    val value1: Long?,
+    val value15: Long?,
+    val value60: Long?,
+    val value1440: Long?
+)
+
+data class RecentAttempts(
     val value1: Long?,
     val value15: Long?,
     val value60: Long?,
