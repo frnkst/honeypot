@@ -43,7 +43,7 @@ def get_ip_info(ip):
     return iplist[ip]
 
 
-def kafka_publish(ip, username, password):
+def save_to_database(ip, username, password):
     ip_info = get_ip_info(ip)
     current_unix_timestamp = time.time()
 
@@ -54,14 +54,11 @@ def kafka_publish(ip, username, password):
         "ip": ip,
         "ipDetails": ip_info
     }
-    # Convert the dictionary to a JSON object
-    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-    mydb = myclient["honeypot"]
-    mycol = mydb["attack"]
 
-    mydict = { "name": "John", "address": "Highway 37" }
-
-    x = mycol.insert_one(data)
+    mongo_client = pymongo.MongoClient("mongodb://localhost:27017/")
+    honeypot_database = mongo_client["honeypot"]
+    table = honeypot_database["attack"]
+    table.insert_one(data)
 
 
 class SSHServerHandler(paramiko.ServerInterface):
@@ -70,7 +67,7 @@ class SSHServerHandler(paramiko.ServerInterface):
         self.event = threading.Event()
 
     def check_auth_password(self, username, password):
-        kafka_publish(self.client_ip, username, password)
+        save_to_database(self.client_ip, username, password)
 
         LOGFILE_LOCK.acquire()
         try:
