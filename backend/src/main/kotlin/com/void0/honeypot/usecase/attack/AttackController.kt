@@ -35,4 +35,3 @@ class AttackController(val attackService: AttackService) {
         return attackService.getMostRecentAttempts()
     }
 }
-}

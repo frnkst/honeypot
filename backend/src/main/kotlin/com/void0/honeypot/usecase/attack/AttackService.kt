@@ -54,27 +54,19 @@ class AttackService {
         }
     }
 
+    fun getMostRecentAttempts(): Flux<Attack>? {
+        return mongoRepository?.findFirst20ByOrderByIdDesc()
+    }
 
     private fun getStatsSummary(amountOfMinutesAgo: Long): Mono<Long> {
         val timeAgo = Instant.now().minus(amountOfMinutesAgo, ChronoUnit.MINUTES).epochSecond
         val query = Query(Criteria.where("timestamp").gte(timeAgo))
         return reactiveMongoTemplate.count(query, "attack")
     }
-
-    fun getMostRecentAttempts(): Flux<Attack>? {
-        return mongoRepository?.findFirst20ByOrderByIdDesc()
-    }
 }
 
 
 data class StatsSummary(
-    val value1: Long?,
-    val value15: Long?,
-    val value60: Long?,
-    val value1440: Long?
-)
-
-data class RecentAttempts(
     val value1: Long?,
     val value15: Long?,
     val value60: Long?,
