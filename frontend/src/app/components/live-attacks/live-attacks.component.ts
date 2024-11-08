@@ -6,7 +6,6 @@ import {AsyncPipe} from "@angular/common";
 
 @Component({
   selector: 'app-live-attacks',
-
   standalone: true,
   imports: [
     AsyncPipe
