@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {AsyncPipe} from "@angular/common";
-import {Top, TopType} from "../../../services/attack.service";
+import {Top, TopType} from "../../../services/test.service";
 import {Observable} from "rxjs";
 
 @Component({

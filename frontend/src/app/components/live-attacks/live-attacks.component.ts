@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {fromUnixTime} from "date-fns";
-import {AttackService, MostRecent} from "../../services/attack.service";
+import {AttackService, MostRecent} from "../../services/test.service";
 import {Observable} from "rxjs";
 import {AsyncPipe} from "@angular/common";
 

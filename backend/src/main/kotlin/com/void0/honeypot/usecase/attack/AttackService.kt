@@ -5,6 +5,7 @@ import com.void0.honeypot.repository.MongoRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Sort
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate
+import org.springframework.data.mongodb.core.aggregation.Aggregation
 import org.springframework.data.mongodb.core.aggregation.Aggregation.*
 import org.springframework.data.mongodb.core.query.Criteria
 import org.springframework.data.mongodb.core.query.Query
@@ -55,13 +56,19 @@ class AttackService {
     }
 
     fun getMostRecentAttempts(): Flux<Attack>? {
-        return mongoRepository?.findFirst20ByOrderByIdDesc()
+        val aggregation = newAggregation(
+            sort(Sort.by(Sort.Direction.DESC, "timestamp")),
+            limit(20)
+        )
+
+        return reactiveMongoTemplate.aggregate(aggregation, "attack", Attack::class.java)
+
     }
 
     private fun getStatsSummary(amountOfMinutesAgo: Long): Mono<Long> {
         val timeAgo = Instant.now().minus(amountOfMinutesAgo, ChronoUnit.MINUTES).epochSecond
         val query = Query(Criteria.where("timestamp").gte(timeAgo))
-        return reactiveMongoTemplate.count(query, "attack")
+        return reactiveMongoTemplate.count(query, "attackkjj")
     }
 }
 

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Observable, of, switchMap, timer} from "rxjs";
-import {AttackService, Top, TopType} from "../../services/attack.service";
+import {AttackService, Top, TopType} from "../../services/test.service";
 import {
   TopPresentationComponent
 } from "./top-presentation/top-presentation.component";

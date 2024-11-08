@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {AllStats} from "../../../services/attack.service";
+import {AllStats} from "../../../services/test.service";
 import {Observable} from "rxjs";
 import {AsyncPipe, JsonPipe, NgIf} from "@angular/common";
 

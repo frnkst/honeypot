@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AllStats, AttackService} from "../../services/attack.service";
+import {AllStats, AttackService} from "../../services/test.service";
 import {Observable, switchMap, timer} from "rxjs";
 import {
   AllStatsPresentationComponent
