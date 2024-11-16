@@ -12,8 +12,8 @@ import {
     AllStatsPresentationComponent,
     AllStatsPresentationComponent
   ],
-  styleUrl: './all-stats-container.component.scss',
   templateUrl: './all-stats-container.component.html',
+  styleUrl: './all-stats-container.component.scss',
 })
 export class AllStatsContainerComponent implements OnInit {
   protected allStats?: Observable<AllStats>;
